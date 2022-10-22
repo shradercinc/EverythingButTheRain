@@ -154,6 +154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 167542816}
+  mouseSensitivity: 3.5
+  walkSpeed: 6
+  moveSmoothTime: 0.1
+  mouseSmoothTime: 0.03
+  lockCursor: 1
 --- !u!143 &54361648
 CharacterController:
   m_ObjectHideFlags: 0
