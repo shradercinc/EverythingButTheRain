@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
 
+    //Umbrella Movement
+    [SerializeField] Transform playerUmbrella = null;
+    float scrollSpeed = 5f;
+
     private void Awake()
     {
         //I'm setting the controller in awake. Tutorial put it in start.
@@ -43,6 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         UpdateMouseLook();
         UpdateMovement();
+        UpdateUmbrella();
     }
 
     void UpdateMouseLook()
@@ -77,6 +82,14 @@ public class PlayerController : MonoBehaviour
             + Vector3.up * velocityY;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    //This is the code that will spin the umbrella
+    void UpdateUmbrella()
+    {
+        float scrollWheelDir = Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+
+        playerUmbrella.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.up * scrollWheelDir, ForceMode.VelocityChange);
 
     }
 }
