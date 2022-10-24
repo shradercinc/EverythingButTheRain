@@ -16,11 +16,11 @@ public class TalkColide : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<NPCInteract>())
         {
-            other.gameObject.GetComponent<NPCInteract>().stateSet = 2;
+            other.gameObject.GetComponent<NPCInteract>().happy = true;
         }
 
     }

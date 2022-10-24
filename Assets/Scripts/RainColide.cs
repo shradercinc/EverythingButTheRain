@@ -11,8 +11,10 @@ public class RainColide : MonoBehaviour
         pos = GetComponent<Transform>();
     }
 
-    private void OnCollisionEnter(Collision other)
+
+    private void OnTriggerEnter(Collider other)
     {
+        print("Colide");
         if (other.gameObject.GetComponent<NPCInteract>())
         {
             if (other.gameObject.GetComponent<NPCInteract>().happy == false)

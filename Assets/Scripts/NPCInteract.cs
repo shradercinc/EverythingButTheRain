@@ -13,12 +13,14 @@ public class NPCInteract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        print($"state:{state}");
+        print($"set:{stateSet}");
         if (state == 0)
         {
             state = stateSet;
@@ -28,13 +30,15 @@ public class NPCInteract : MonoBehaviour
         {
             state = 1.1f;
             aud.PlayOneShot(clips[0]);
+            print("Splashed");
         }
-        //play 
+        //play interact
         if (state == 2)
         {
             state = 2.1f;
             aud.PlayOneShot(clips[1]);
         }
+        //play happy splash
         if (state == 3)
         {
             state = 3.1f;
