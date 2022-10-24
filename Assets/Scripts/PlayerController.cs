@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
 
     //Umbrella Movement
     [SerializeField] Transform playerUmbrella = null;
+    [SerializeField] Transform RainArea = null;
     float scrollSpeed = 5f;
+    public float RAMod = 1f;
 
     private void Awake()
     {
@@ -91,5 +93,9 @@ public class PlayerController : MonoBehaviour
 
         playerUmbrella.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.up * scrollWheelDir, ForceMode.VelocityChange);
 
+        //rain area scales off of a base modifier * umbrella rotation speed
+        var rotV = playerUmbrella.GetComponent<Rigidbody>().angularVelocity;
+        RainArea.GetComponent<Transform>().localScale = new Vector3(RAMod * rotV.magnitude,0.1f, RAMod * rotV.magnitude);
+        
     }
 }
