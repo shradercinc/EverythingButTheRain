@@ -58,8 +58,10 @@ public class PlayerController : MonoBehaviour
 
         currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
 
+        
+        //Clamped Camera movement to look only at floor and not go above 10 angle
         cameraPitch -= currentMouseDelta.y * mouseSensitivity; //We subtract to invert the delta
-        cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f); //Clamp camera
+        cameraPitch = Mathf.Clamp(cameraPitch, -10.0f, 90.0f); //Clamp camera
 
         playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
