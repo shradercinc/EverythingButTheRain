@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
     {
         float scrollWheelDir = Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
 
-        playerUmbrella.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.up * scrollWheelDir, ForceMode.VelocityChange);
+        playerUmbrella.GetComponent<Rigidbody>().AddRelativeTorque(playerUmbrella.up* scrollWheelDir, ForceMode.VelocityChange);
 
         //rain area scales off of a base modifier * umbrella rotation speed
         var rotV = playerUmbrella.GetComponent<Rigidbody>().angularVelocity;
