@@ -324,11 +324,11 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.9561509, g: 0.983135, b: 1, a: 0.078431375}
+    - _BaseColor: {r: 0.44503233, g: 0.7141455, b: 0.8679245, a: 0.078431375}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.9561508, g: 0.9831349, b: 1, a: 0.078431375}
+    - _Color: {r: 0.4450323, g: 0.7141455, b: 0.8679245, a: 0.078431375}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
