@@ -28,8 +28,10 @@ public class PlayerController : MonoBehaviour
     //Umbrella Movement
     [SerializeField] Transform playerUmbrella = null;
     [SerializeField] Transform RainArea = null;
-    float scrollSpeed = 5f;
+    [SerializeField] float scrollSpeed = 5f;
     public float RAMod = 1f;
+
+    [SerializeField]float counter = 0;
 
     private void Awake()
     {
@@ -58,8 +60,10 @@ public class PlayerController : MonoBehaviour
 
         currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
 
+        
+        //Clamped Camera movement to look only at floor and not go above 10 angle
         cameraPitch -= currentMouseDelta.y * mouseSensitivity; //We subtract to invert the delta
-        cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f); //Clamp camera
+        cameraPitch = Mathf.Clamp(cameraPitch, -10.0f, 90.0f); //Clamp camera
 
         playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
@@ -90,8 +94,27 @@ public class PlayerController : MonoBehaviour
     void UpdateUmbrella()
     {
         float scrollWheelDir = Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+        Rigidbody umbrellaRigid = playerUmbrella.GetComponent<Rigidbody>();
 
-        playerUmbrella.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.up * scrollWheelDir, ForceMode.VelocityChange);
+        umbrellaRigid.AddRelativeTorque(playerUmbrella.up* scrollWheelDir, ForceMode.VelocityChange);
+        umbrellaRigid.maxAngularVelocity = 12;
+
+        //Stopping the Umbrella when player stops spinning
+        if(scrollWheelDir == 0)
+        {
+            counter += Time.deltaTime;
+        }
+        else
+        {
+            counter = 0;
+        }
+
+        if(counter >= .35f)
+        {
+            //Debug.Log("Starting Stop");
+            umbrellaRigid.angularVelocity = Vector3.Slerp(umbrellaRigid.angularVelocity, Vector3.zero, .1f);
+        }
+
 
         //rain area scales off of a base modifier * umbrella rotation speed
         var rotV = playerUmbrella.GetComponent<Rigidbody>().angularVelocity;
