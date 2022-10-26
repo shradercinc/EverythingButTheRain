@@ -11,6 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
+  - _MATERIAL_FEATURE_CLEAR_COAT
+  - _NORMALMAP
   - _NORMALMAP_TANGENT_SPACE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -48,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoatMaskMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e72855df9724f78468b2a0d05aba3766, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -100,7 +102,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1d8123414da4fba4fae3d0a62e8c3284, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -170,7 +172,7 @@ Material:
     - _Anisotropy: 0
     - _BlendMode: 0
     - _BumpScale: 1
-    - _CoatMask: 0
+    - _CoatMask: 0.634
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -190,7 +192,7 @@ Material:
     - _DstBlend: 0
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
-    - _EmissiveIntensity: 1
+    - _EmissiveIntensity: 0.30228192
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
@@ -232,7 +234,7 @@ Material:
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.367
     - _SmoothnessRemapMax: 0
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
@@ -281,7 +283,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColorLDR: {r: 0.88031507, g: 0.88031507, b: 0.88031507, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

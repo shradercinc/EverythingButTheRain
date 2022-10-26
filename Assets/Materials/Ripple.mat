@@ -11,7 +11,9 @@ Material:
   m_Shader: {fileID: 4800000, guid: c4edd00ff2db5b24391a4fcb1762e459, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHAPREMULTIPLY_ON
+  - _COLOROVERLAY_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,8 +21,8 @@ Material:
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
-  - DistortionVectors
   - MOTIONVECTORS
+  - DistortionVectors
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -97,7 +99,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
     - _AlphaClip: 0
-    - _AlphaCutoff: 0.5
+    - _AlphaCutoff: 0
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
@@ -112,10 +114,10 @@ Material:
     - _CameraNearFadeDistance: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColorMode: 0
+    - _ColorMode: 3
     - _Cull: 2
     - _CullMode: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
@@ -154,7 +156,7 @@ Material:
     - _IncludeIndirectLighting: 1
     - _LightingEnabled: 0
     - _Metallic: 0
-    - _Mode: 0
+    - _Mode: 3
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
     - _Parallax: 0.005
@@ -190,14 +192,14 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.7019608}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.6117647}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _UnlitColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UnlitColor: {r: 1, g: 1, b: 1, a: 0.6117647}
     - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2435058007181875398
