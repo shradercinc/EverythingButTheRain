@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         
         //Clamped Camera movement to look only at floor and not go above 10 angle
         cameraPitch -= currentMouseDelta.y * mouseSensitivity; //We subtract to invert the delta
-        cameraPitch = Mathf.Clamp(cameraPitch, -15.0f, 25.0f); //Clamp camera
+        cameraPitch = Mathf.Clamp(cameraPitch, -15.0f, 35.0f); //Clamp camera
 
         playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
