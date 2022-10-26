@@ -21,6 +21,7 @@ public class TalkColide : MonoBehaviour
         if (other.gameObject.GetComponent<NPCInteract>())
         {
             other.gameObject.GetComponent<NPCInteract>().happy = true;
+            other.gameObject.GetComponent<NPCInteract>().stateSet = 2;
         }
 
     }
