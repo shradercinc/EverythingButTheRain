@@ -25,6 +25,12 @@ public class PlayerController : MonoBehaviour
     Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
 
+    //Audio
+    private AudioSource aud;
+    [SerializeField] AudioClip[] Walk;
+    [SerializeField] float stepRate = 0;
+    private float stepT = 0; 
+
     //Umbrella Movement
     [SerializeField] Transform playerUmbrella = null;
     [SerializeField] Transform RainArea = null;
@@ -35,23 +41,44 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        aud = GetComponent<AudioSource>();
         //I'm setting the controller in awake. Tutorial put it in start.
         controller = GetComponent<CharacterController>(); 
     }
     void Start()
     {
+        Time.timeScale = 1f;
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+        stepT = 1 * walkSpeed * stepRate;
     }
 
     void Update()
     {
+        UpdateStep();
         UpdateMouseLook();
         UpdateMovement();
         UpdateUmbrella();
+    }
+
+    void UpdateStep()
+    {
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            stepT -= Time.deltaTime;
+        }
+        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+        {
+            stepT = 0.2f;
+        }
+        if (stepT <= 0)
+        {
+            aud.PlayOneShot(Walk[Random.Range(0, Walk.Length - 1)]);
+            stepT = walkSpeed / stepRate;
+        }
     }
 
     void UpdateMouseLook()
