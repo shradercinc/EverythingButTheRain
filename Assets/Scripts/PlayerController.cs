@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     //Audio
     private AudioSource aud;
     [SerializeField] AudioClip[] Walk;
-    [SerializeField] float stepRate = 0;
+    [SerializeField] float stepRate = 10;
     private float stepT = 0; 
 
     //Umbrella Movement
