@@ -19,8 +19,8 @@ public class NPCInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print($"state:{state}");
-        print($"set:{stateSet}");
+        //print($"state:{state}");
+        //print($"set:{stateSet}");
         if (state == 0)
         {
             state = stateSet;
