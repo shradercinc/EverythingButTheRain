@@ -14,7 +14,7 @@ public class RainColide : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Colide");
+        print("hitany");
         if (other.gameObject.GetComponent<NPCInteract>())
         {
             if (other.gameObject.GetComponent<NPCInteract>().happy == false)
@@ -30,6 +30,7 @@ public class RainColide : MonoBehaviour
 
         if (other.gameObject.CompareTag("Crowd Agent"))
         {
+            print("hit");
             Debug.Log("Hit crowd");
             var agent = other.gameObject.GetComponent<CrowdControl>();
             agent.Flee(agent.transform.position - transform.position);
