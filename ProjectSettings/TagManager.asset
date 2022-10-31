@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+<<<<<<< Updated upstream
   - Title
+=======
+  - Crowd Agent
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

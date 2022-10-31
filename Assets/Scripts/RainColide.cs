@@ -27,6 +27,13 @@ public class RainColide : MonoBehaviour
             }
 
         }
+
+        if (other.gameObject.CompareTag("Crowd Agent"))
+        {
+            Debug.Log("Hit crowd");
+            var agent = other.gameObject.GetComponent<CrowdControl>();
+            agent.Flee(agent.transform.position - transform.position);
+        }
     }
     // Update is called once per frame
     void Update()
