@@ -21,6 +21,7 @@ public class CrowdManager : MonoBehaviour
     void Awake()
     {
         _instance = this;
+        player = FindObjectOfType<PlayerController>().transform;
         SortByDistanceFromPlayer();
     }
 
