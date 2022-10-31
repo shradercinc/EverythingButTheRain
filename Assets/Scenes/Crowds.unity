@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.3406401, g: 0.35370207, b: 0.38679248, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.556
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 37.678894, g: 41.11795, b: 54.605103, a: 1}
+  m_IndirectSpecularColor: {r: 37.72879, g: 41.185852, b: 54.70697, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-482782
+  m_Name: pb_Mesh-111098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -299,7 +299,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-482768
+  m_Name: pb_Mesh-111084
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -890,7 +890,7 @@ PrefabInstance:
     - target: {fileID: 4895909424241025897, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 1178
+      value: 1226
       objectReference: {fileID: 0}
     - target: {fileID: 4895909425250471954, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
@@ -985,7 +985,7 @@ PrefabInstance:
     - target: {fileID: 4895909425301840275, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4895909426100466339, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
@@ -995,7 +995,7 @@ PrefabInstance:
     - target: {fileID: 4895909426100466339, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 670
+      value: 718
       objectReference: {fileID: 0}
     - target: {fileID: 4895909426100466366, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
@@ -1007,6 +1007,37 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 39900756}
+    - target: {fileID: 6416305605144954073, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 4b35b85cd80dfde4f8df261d0277a0b0,
+        type: 2}
+    - target: {fileID: 7448717416442958583, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448717416442958583, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448717416442958583, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535925614182388826, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: vMod
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535925614182388826, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: spinAudR
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36e23e4249ca63444ae296e065ffd449, type: 3}
 --- !u!1001 &8818839925629552871

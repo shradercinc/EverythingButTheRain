@@ -143,9 +143,10 @@ public class PlayerController : MonoBehaviour
         }
 
 
+
         //rain area scales off of a base modifier * umbrella rotation speed
         var rotV = playerUmbrella.GetComponent<Rigidbody>().angularVelocity;
         RainArea.GetComponent<Transform>().localScale = new Vector3(RAMod * rotV.magnitude,0.1f, RAMod * rotV.magnitude);
-        
+
     }
 }
