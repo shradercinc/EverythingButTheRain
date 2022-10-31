@@ -399,7 +399,7 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 40.3
+    m_Value: 15
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
@@ -411,7 +411,7 @@ MonoBehaviour:
     m_Value: 1
   depthExtent:
     m_OverrideState: 1
-    m_Value: 465.1
+    m_Value: 40.95
   denoisingMode:
     m_OverrideState: 1
     m_Value: 2

@@ -58,7 +58,7 @@ public class CrowdControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_agent.remainingDistance <= 1f)
+        if (_agent.remainingDistance <= 0.5f)
         {
             ResetAgent();
             NextGoal();
