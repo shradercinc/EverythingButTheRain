@@ -240,6 +240,7 @@ MonoBehaviour:
   objectTitle: Gameobject
   text: {fileID: 0}
   textComponent: {fileID: 0}
+  reactAudio: {fileID: 8300000, guid: 776ddb04c6497e943956d8fe13565a98, type: 3}
 --- !u!1 &102156626
 GameObject:
   m_ObjectHideFlags: 0

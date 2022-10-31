@@ -13,6 +13,12 @@ public class InteractObject : MonoBehaviour
     [SerializeField] GameObject text;
     [SerializeField] TextMeshPro textComponent;
 
+    //This bool is how we keep track if the player is looking at the object
+    private bool isLooking = false;
+
+    //The audio clip which will be the main characters reaction to this object
+    [SerializeField] AudioClip reactAudio;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -36,16 +42,33 @@ public class InteractObject : MonoBehaviour
     {
         //This makes the NPC always stare at the player
         transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+        if(Input.GetKeyDown(KeyCode.F) && isLooking) 
+        {
+            //Debug.Log("WE WILL PLAY THE AUDIO");
+            PlayerReaction();
+        }
     }
 
     private void OnMouseEnter()
     {
-        Debug.Log("Turn on Text");
+        //Debug.Log("Turn on Text");
         text.SetActive(true);
+        isLooking = true;
     }
 
     private void OnMouseExit()
     {
         text.SetActive(false);
+        isLooking = false;
+    }
+
+
+    public void PlayerReaction()
+    {
+        AudioSource source = player.gameObject.GetComponent<AudioSource>();
+        if(!source.isPlaying)
+        {
+            source.PlayOneShot(reactAudio);
+        }
     }
 }
