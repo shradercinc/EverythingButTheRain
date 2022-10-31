@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 37.66873, g: 41.111084, b: 54.579773, a: 1}
+  m_IndirectSpecularColor: {r: 37.66812, g: 41.111816, b: 54.6167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1131,7 +1131,6 @@ GameObject:
   - component: {fileID: 46012606}
   - component: {fileID: 46012605}
   - component: {fileID: 46012604}
-  - component: {fileID: 46012609}
   - component: {fileID: 46012608}
   m_Layer: 0
   m_Name: Agent Goal (3)
@@ -1160,7 +1159,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46012603}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1230,28 +1229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &46012609
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46012603}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &47090012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3289979987812827056, guid: b0c62dfca8cf157479e0ea308c7f7295,
@@ -1470,7 +1447,6 @@ GameObject:
   - component: {fileID: 136714833}
   - component: {fileID: 136714832}
   - component: {fileID: 136714831}
-  - component: {fileID: 136714836}
   - component: {fileID: 136714835}
   m_Layer: 0
   m_Name: Agent Goal (9)
@@ -1499,7 +1475,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136714830}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1569,28 +1545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &136714836
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136714830}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &137588559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3303,7 +3257,6 @@ GameObject:
   - component: {fileID: 374138709}
   - component: {fileID: 374138708}
   - component: {fileID: 374138707}
-  - component: {fileID: 374138706}
   - component: {fileID: 374138705}
   m_Layer: 0
   m_Name: Agent Goal (19)
@@ -3339,28 +3292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &374138706
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374138703}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!65 &374138707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3381,7 +3312,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374138703}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3606,7 +3537,6 @@ GameObject:
   - component: {fileID: 401513625}
   - component: {fileID: 401513624}
   - component: {fileID: 401513623}
-  - component: {fileID: 401513628}
   - component: {fileID: 401513627}
   m_Layer: 0
   m_Name: Agent Goal (6)
@@ -3635,7 +3565,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401513622}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3705,28 +3635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &401513628
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 401513622}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &411531031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3289979987812827056, guid: b0c62dfca8cf157479e0ea308c7f7295,
@@ -3945,7 +3853,6 @@ GameObject:
   - component: {fileID: 519754694}
   - component: {fileID: 519754693}
   - component: {fileID: 519754692}
-  - component: {fileID: 519754697}
   - component: {fileID: 519754696}
   m_Layer: 0
   m_Name: Agent Goal (11)
@@ -3974,7 +3881,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519754691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4044,28 +3951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &519754697
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519754691}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &554166780
 GameObject:
   m_ObjectHideFlags: 0
@@ -5511,7 +5396,6 @@ GameObject:
   - component: {fileID: 714662824}
   - component: {fileID: 714662823}
   - component: {fileID: 714662822}
-  - component: {fileID: 714662827}
   - component: {fileID: 714662826}
   m_Layer: 0
   m_Name: Agent Goal (12)
@@ -5540,7 +5424,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714662821}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5610,28 +5494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &714662827
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714662821}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &714917789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6306,7 +6168,6 @@ GameObject:
   - component: {fileID: 743098797}
   - component: {fileID: 743098796}
   - component: {fileID: 743098795}
-  - component: {fileID: 743098800}
   - component: {fileID: 743098799}
   m_Layer: 0
   m_Name: Agent Goal (17)
@@ -6335,7 +6196,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743098794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6405,28 +6266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &743098800
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743098794}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &746686649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3289979987812827056, guid: b0c62dfca8cf157479e0ea308c7f7295,
@@ -6457,7 +6296,6 @@ GameObject:
   - component: {fileID: 761456264}
   - component: {fileID: 761456263}
   - component: {fileID: 761456262}
-  - component: {fileID: 761456267}
   - component: {fileID: 761456266}
   m_Layer: 0
   m_Name: Agent Goal (7)
@@ -6486,7 +6324,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761456261}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6556,28 +6394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &761456267
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761456261}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &761923848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6760,7 +6576,6 @@ GameObject:
   - component: {fileID: 790757458}
   - component: {fileID: 790757457}
   - component: {fileID: 790757456}
-  - component: {fileID: 790757461}
   - component: {fileID: 790757460}
   m_Layer: 0
   m_Name: Agent Goal (5)
@@ -6789,7 +6604,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790757455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6859,28 +6674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &790757461
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790757455}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &798470862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7579,7 +7372,6 @@ GameObject:
   - component: {fileID: 944936957}
   - component: {fileID: 944936956}
   - component: {fileID: 944936955}
-  - component: {fileID: 944936960}
   - component: {fileID: 944936959}
   m_Layer: 0
   m_Name: Agent Goal (4)
@@ -7608,7 +7400,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944936954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7678,28 +7470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &944936960
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944936954}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &945006561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8726,7 +8496,6 @@ GameObject:
   - component: {fileID: 1022933983}
   - component: {fileID: 1022933982}
   - component: {fileID: 1022933981}
-  - component: {fileID: 1022933986}
   - component: {fileID: 1022933985}
   m_Layer: 0
   m_Name: Agent Goal (13)
@@ -8755,7 +8524,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022933980}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8825,28 +8594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1022933986
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022933980}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1025306444
 GameObject:
   m_ObjectHideFlags: 0
@@ -10888,7 +10635,6 @@ GameObject:
   - component: {fileID: 1183137090}
   - component: {fileID: 1183137089}
   - component: {fileID: 1183137088}
-  - component: {fileID: 1183137093}
   - component: {fileID: 1183137092}
   m_Layer: 0
   m_Name: Agent Goal (14)
@@ -10917,7 +10663,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183137087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10987,28 +10733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1183137093
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183137087}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1185277643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13559,7 +13283,6 @@ GameObject:
   - component: {fileID: 1424223143}
   - component: {fileID: 1424223142}
   - component: {fileID: 1424223141}
-  - component: {fileID: 1424223140}
   - component: {fileID: 1424223139}
   m_Layer: 0
   m_Name: Agent Goal (18)
@@ -13595,28 +13318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1424223140
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424223137}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!65 &1424223141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13637,7 +13338,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424223137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15897,7 +15598,6 @@ GameObject:
   - component: {fileID: 1641496153}
   - component: {fileID: 1641496152}
   - component: {fileID: 1641496151}
-  - component: {fileID: 1641496156}
   - component: {fileID: 1641496155}
   m_Layer: 0
   m_Name: Agent Goal (2)
@@ -15926,7 +15626,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641496150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15996,28 +15696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1641496156
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641496150}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &1654836445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3289979987812827056, guid: b0c62dfca8cf157479e0ea308c7f7295,
@@ -16212,7 +15890,6 @@ GameObject:
   - component: {fileID: 1699632423}
   - component: {fileID: 1699632422}
   - component: {fileID: 1699632421}
-  - component: {fileID: 1699632426}
   - component: {fileID: 1699632425}
   m_Layer: 0
   m_Name: Agent Goal (8)
@@ -16241,7 +15918,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699632420}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16311,28 +15988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1699632426
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699632420}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &1714107436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3289979987812827056, guid: b0c62dfca8cf157479e0ea308c7f7295,
@@ -18191,7 +17846,6 @@ GameObject:
   - component: {fileID: 1903782377}
   - component: {fileID: 1903782376}
   - component: {fileID: 1903782375}
-  - component: {fileID: 1903782380}
   - component: {fileID: 1903782379}
   m_Layer: 0
   m_Name: Agent Goal (10)
@@ -18220,7 +17874,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903782374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18290,28 +17944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1903782380
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903782374}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1907613352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18816,7 +18448,6 @@ GameObject:
   - component: {fileID: 1949508239}
   - component: {fileID: 1949508238}
   - component: {fileID: 1949508237}
-  - component: {fileID: 1949508242}
   - component: {fileID: 1949508241}
   m_Layer: 0
   m_Name: Agent Goal (1)
@@ -18845,7 +18476,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949508236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18915,28 +18546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1949508242
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949508236}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1956925344
 GameObject:
   m_ObjectHideFlags: 0
@@ -18949,7 +18558,6 @@ GameObject:
   - component: {fileID: 1956925347}
   - component: {fileID: 1956925346}
   - component: {fileID: 1956925345}
-  - component: {fileID: 1956925350}
   - component: {fileID: 1956925349}
   m_Layer: 0
   m_Name: Agent Goal
@@ -18978,7 +18586,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956925344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19048,28 +18656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1956925350
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956925344}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &1957986491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3289979987812827056, guid: b0c62dfca8cf157479e0ea308c7f7295,
@@ -19088,7 +18674,6 @@ GameObject:
   - component: {fileID: 1962688866}
   - component: {fileID: 1962688865}
   - component: {fileID: 1962688864}
-  - component: {fileID: 1962688869}
   - component: {fileID: 1962688868}
   m_Layer: 0
   m_Name: Agent Goal (16)
@@ -19117,7 +18702,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962688863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19187,28 +18772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1962688869
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962688863}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1972029520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19385,7 +18948,6 @@ GameObject:
   - component: {fileID: 1984451545}
   - component: {fileID: 1984451544}
   - component: {fileID: 1984451543}
-  - component: {fileID: 1984451548}
   - component: {fileID: 1984451547}
   m_Layer: 0
   m_Name: Agent Goal (15)
@@ -19414,7 +18976,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984451542}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19484,28 +19046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &1984451548
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984451542}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1992943559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19870,7 +19410,6 @@ GameObject:
   - component: {fileID: 2049834652}
   - component: {fileID: 2049834651}
   - component: {fileID: 2049834650}
-  - component: {fileID: 2049834649}
   - component: {fileID: 2049834648}
   m_Layer: 0
   m_Name: Agent Goal (20)
@@ -19906,28 +19445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9f3ff679cb7ce419c2eb0e9aa1e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &2049834649
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049834646}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!65 &2049834650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19948,7 +19465,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049834646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
