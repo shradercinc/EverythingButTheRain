@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Event_Tutorial : MonoBehaviour
 {
+    MeshRenderer myMesh;
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        myMesh = GetComponent<MeshRenderer>();
+    }
+
     void Start()
     {
         
@@ -20,6 +27,7 @@ public class Event_Tutorial : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            myMesh.enabled = false;
             StartCoroutine("TutorialSetup");
         }
     }
