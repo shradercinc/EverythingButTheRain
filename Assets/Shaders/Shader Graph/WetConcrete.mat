@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WetConcrete
-  m_Shader: {fileID: -6465566751694194690, guid: 1468afd74089f26489b92f02e3103e0a,
+  m_Shader: {fileID: -6465566751694194690, guid: a56d634210087e9418175e95b17cd76b,
     type: 3}
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -107,6 +107,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialCenter: {r: -3.5, g: -12.5, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _tileCoords: {r: 5, g: 8, b: 0, a: 0}
   m_BuildTextureStacks: []
