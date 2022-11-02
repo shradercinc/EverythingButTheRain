@@ -13,12 +13,13 @@ public class CrowdControl : MonoBehaviour
     private float _spd;
     private float _angularSpd;
     [SerializeField] private float fleeRadius;
+    public bool isWandering = true;
     
     // Start is called before the first frame update
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _agent.SetDestination(CrowdManager.Instance.goals[0].transform.position);
+        if(isWandering) NextGoal();
         _agent.speed *= Random.Range(0.5f, 2f);
         _spd = _agent.speed;
         _angularSpd = _agent.angularSpeed;
@@ -61,7 +62,7 @@ public class CrowdControl : MonoBehaviour
         if (_agent.remainingDistance <= 0.5f)
         {
             ResetAgent();
-            NextGoal();
+            if(isWandering) NextGoal();
         }
     }
 }
