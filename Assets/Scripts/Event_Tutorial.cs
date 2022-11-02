@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Event_Tutorial : MonoBehaviour
 {
+
     MeshRenderer myMesh;
     public GameObject _player;
 
@@ -17,6 +18,7 @@ public class Event_Tutorial : MonoBehaviour
     bool inTrig = false;
     //bool to track if we already played tutorial
     bool hasPlayed = false;
+
 
     //Tracks the Rigidbody of player's umbrella
     Rigidbody umbRigid;
