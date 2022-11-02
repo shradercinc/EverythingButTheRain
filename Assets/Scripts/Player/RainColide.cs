@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RainColide : MonoBehaviour
@@ -27,15 +29,21 @@ public class RainColide : MonoBehaviour
             }
 
         }
-
+        
         if (other.gameObject.CompareTag("Crowd Agent"))
         {
             print("hit");
             Debug.Log("Hit crowd");
             var agent = other.gameObject.GetComponent<CrowdControl>();
-            agent.Flee(agent.transform.position - transform.position);
+            var agentPos = agent.transform.position;
+            var rainCollidePos = transform.position;
+            var fleeDir = agentPos - new Vector3(rainCollidePos.x, agentPos.y, rainCollidePos.z);
+            agent.Flee(fleeDir);
+            Debug.DrawRay(agent.transform.position, fleeDir, Color.red, 2f);
+            agent.isWandering = true;
         }
     }
+
     // Update is called once per frame
     void Update()
     {
