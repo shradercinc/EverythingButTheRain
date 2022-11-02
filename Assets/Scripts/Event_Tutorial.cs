@@ -13,11 +13,18 @@ public class Event_Tutorial : MonoBehaviour
     //Audio for player's reaction
     public AudioClip playerReactClip;
 
+    //bool tracks if players is in the right spot to splash
+    bool inTrig = true;
+
+    //Tracks the Rigidbody of player's umbrella
+    Rigidbody umbRigid;
+
     // Start is called before the first frame update
     private void Awake()
     {
         myMesh = GetComponent<MeshRenderer>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        umbRigid = _player.transform.Find("Umbrella_Temp").GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -28,15 +35,30 @@ public class Event_Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(inTrig)
+        {
+            //If the player spins like they were supposed to
+
+            if (Mathf.Abs(umbRigid.angularVelocity.y) > 3)
+           {
+                Destroy(gameObject);
+           }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             StartCoroutine("TutorialSetup");
         }
+
+        inTrig = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inTrig = false;
     }
 
     IEnumerator TutorialSetup()
@@ -45,8 +67,6 @@ public class Event_Tutorial : MonoBehaviour
         //Open up the tutorialCanvas
         yield return new WaitForSeconds(1f);
         tutorialUI.SetActive(true);
-
-        
     }
 
     //This object is controlling the tutorial event for the player
