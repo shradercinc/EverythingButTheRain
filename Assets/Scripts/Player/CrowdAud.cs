@@ -36,5 +36,9 @@ public class CrowdAud : MonoBehaviour
         {
             aud.volume = 0.2f;
         }
+        if (aud.volume >= 0.8f)
+        {
+            aud.volume = 0.2f;
+        }
     }
 }
