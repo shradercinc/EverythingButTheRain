@@ -5,11 +5,19 @@ using UnityEngine;
 public class Event_Tutorial : MonoBehaviour
 {
     MeshRenderer myMesh;
+    public GameObject _player;
+
+    //UI for tutorial
+    public GameObject tutorialUI;
+
+    //Audio for player's reaction
+    public AudioClip playerReactClip;
 
     // Start is called before the first frame update
     private void Awake()
     {
         myMesh = GetComponent<MeshRenderer>();
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
@@ -25,18 +33,20 @@ public class Event_Tutorial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.tag == "Player")
         {
-            myMesh.enabled = false;
             StartCoroutine("TutorialSetup");
         }
     }
 
     IEnumerator TutorialSetup()
     {
-        Debug.Log("WAIT!");
-        yield return new WaitForSeconds(2f);
-        Debug.Log("DONE");
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TutorialAudio");
+        //Open up the tutorialCanvas
+        yield return new WaitForSeconds(1f);
+        tutorialUI.SetActive(true);
+
+        
     }
 
     //This object is controlling the tutorial event for the player
