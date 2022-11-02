@@ -10,8 +10,13 @@ public class PlayerDialog : MonoBehaviour
 
     //Clips for tutorial
     [SerializeField]AudioClip tutorialReact;
-    
-    
+
+
+    private void Awake()
+    {
+        talkSource = GetComponent<AudioSource>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

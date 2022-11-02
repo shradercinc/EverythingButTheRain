@@ -14,7 +14,9 @@ public class Event_Tutorial : MonoBehaviour
     public AudioClip playerReactClip;
 
     //bool tracks if players is in the right spot to splash
-    bool inTrig = true;
+    bool inTrig = false;
+    //bool to track if we already played tutorial
+    bool hasPlayed = false;
 
     //Tracks the Rigidbody of player's umbrella
     Rigidbody umbRigid;
@@ -50,7 +52,11 @@ public class Event_Tutorial : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            StartCoroutine("TutorialSetup");
+
+            if (!hasPlayed)
+            {
+                StartCoroutine("TutorialSetup");
+            }
         }
 
         inTrig = true;
@@ -65,7 +71,7 @@ public class Event_Tutorial : MonoBehaviour
     {
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TutorialAudio");
         //Open up the tutorialCanvas
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
         tutorialUI.SetActive(true);
     }
 
