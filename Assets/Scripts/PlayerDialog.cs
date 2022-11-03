@@ -10,6 +10,7 @@ public class PlayerDialog : MonoBehaviour
 
     //Clips for tutorial
     [SerializeField]AudioClip tutorialReact;
+    [SerializeField] AudioClip tutorialAftermath;
 
     //Clips for Maeve
     [SerializeField] AudioClip maeveReact;
@@ -41,6 +42,14 @@ public class PlayerDialog : MonoBehaviour
     IEnumerator TutorialAudio()
     {
         talkSource.clip = tutorialReact;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
+    IEnumerator TutorialAftermathAudio()
+    {
+        Debug.Log("Playing Aftermath audio");
+        talkSource.clip = tutorialAftermath;
         talkSource.Play();
         yield return new WaitWhile(() => talkSource.isPlaying);
     }
