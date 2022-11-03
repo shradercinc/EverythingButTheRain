@@ -51,8 +51,12 @@ public class Event_Tutorial : MonoBehaviour
 
             if (Mathf.Abs(umbRigid.angularVelocity.y) > 3)
            {
-                tutorialUI.SetActive(false);
-                Destroy(gameObject);
+                if (STATE_STATIC == 1)
+                {
+                    _player.GetComponent<PlayerDialog>().StartCoroutine("TutorialAftermathAudio");
+                    tutorialUI.SetActive(false);
+                    Destroy(gameObject);
+                }
            }
         }
     }
