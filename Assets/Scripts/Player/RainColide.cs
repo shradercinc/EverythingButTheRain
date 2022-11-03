@@ -42,6 +42,12 @@ public class RainColide : MonoBehaviour
             Debug.DrawRay(agent.transform.position, fleeDir, Color.red, 2f);
             agent.isWandering = true;
         }
+
+        if(other.gameObject.CompareTag("NPC"))
+        {
+            Debug.Log("Hit NPC");
+            other.gameObject.GetComponent<NPCFollow>().isFollowing = true;
+        }
     }
 
     // Update is called once per frame

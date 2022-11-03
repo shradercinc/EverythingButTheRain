@@ -75,7 +75,7 @@ public class Event_Tutorial : MonoBehaviour
                 }
                 else if(STATE_STATIC == 3)
                 {
-
+                    StartCoroutine("FinalSetup");
                 }
                 else
                 {
@@ -108,6 +108,16 @@ public class Event_Tutorial : MonoBehaviour
         myMesh.enabled = false;
         Debug.Log("We will cue Maeve");
         yield return new WaitForSeconds(2f);
+        _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveIntroAudio");
+    }
+
+    IEnumerator FinalSetup()
+    {
+        hasPlayed = true;
+        myMesh.enabled = false;
+        Debug.Log("We will cue Final");
+        yield return new WaitForSeconds(2f);
+        _player.GetComponent<PlayerDialog>().StartCoroutine("FinalIntroAudio");
     }
 
     //This object is controlling the tutorial event for the player

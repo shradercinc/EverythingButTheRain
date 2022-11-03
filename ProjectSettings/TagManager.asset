@@ -7,6 +7,7 @@ TagManager:
   - Crowd Agent
   - Interactable
   - EventTrigger
+  - NPC
   layers:
   - Default
   - TransparentFX
