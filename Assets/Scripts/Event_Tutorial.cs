@@ -5,8 +5,6 @@ using UnityEngine;
 public class Event_Tutorial : MonoBehaviour
 {
 
-    GameManager gm;
-
     MeshRenderer myMesh;
     public GameObject _player;
 
@@ -28,7 +26,6 @@ public class Event_Tutorial : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         myMesh = GetComponent<MeshRenderer>();
         _player = GameObject.FindGameObjectWithTag("Player");
         umbRigid = _player.transform.Find("Umbrella_Temp").GetComponent<Rigidbody>();
@@ -60,7 +57,6 @@ public class Event_Tutorial : MonoBehaviour
 
             if (!hasPlayed)
             {
-
                 //gm.TutorialPlayout();
                 StartCoroutine("TutorialSetup");
             }
@@ -76,9 +72,9 @@ public class Event_Tutorial : MonoBehaviour
 
     IEnumerator TutorialSetup()
     {
+        Debug.Log("Is playing tutorial");
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TutorialAudio");
         //Open up the tutorialCanvas
-        yield return new WaitForSeconds(0.2f);
         tutorialUI.SetActive(true);
     }
 
