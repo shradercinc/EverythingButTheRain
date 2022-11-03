@@ -19,6 +19,12 @@ public class Event_Tutorial : MonoBehaviour
     //bool to track if we already played tutorial
     bool hasPlayed = false;
 
+    //This is a prototype way to have states on this event. Any numbers not listed is a error
+    // 1 = Tutorial
+    // 2 = Maeve
+    // 3 = Final
+    public int STATE_STATIC = -1;
+
 
     //Tracks the Rigidbody of player's umbrella
     Rigidbody umbRigid;
@@ -45,6 +51,7 @@ public class Event_Tutorial : MonoBehaviour
 
             if (Mathf.Abs(umbRigid.angularVelocity.y) > 3)
            {
+                tutorialUI.SetActive(false);
                 Destroy(gameObject);
            }
         }
@@ -54,11 +61,26 @@ public class Event_Tutorial : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
             if (!hasPlayed)
             {
-                //gm.TutorialPlayout();
-                StartCoroutine("TutorialSetup");
+                //Tutorial
+                if(STATE_STATIC == 1)
+                {
+                    //gm.TutorialPlayout();
+                    StartCoroutine("TutorialSetup");
+                }
+                else if(STATE_STATIC == 2)
+                {
+                    StartCoroutine("MaeveSetup");
+                }
+                else if(STATE_STATIC == 3)
+                {
+
+                }
+                else
+                {
+                    Debug.Log("Invalid Static State");
+                }
             }
         }
 
@@ -73,9 +95,19 @@ public class Event_Tutorial : MonoBehaviour
     IEnumerator TutorialSetup()
     {
         Debug.Log("Is playing tutorial");
+        hasPlayed = true;
+        myMesh.enabled = false;
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TutorialAudio");
         //Open up the tutorialCanvas
         tutorialUI.SetActive(true);
+    }
+
+    IEnumerator MaeveSetup()
+    {
+        hasPlayed = true;
+        myMesh.enabled = false;
+        Debug.Log("We will cue Maeve");
+        yield return new WaitForSeconds(2f);
     }
 
     //This object is controlling the tutorial event for the player
