@@ -57,6 +57,11 @@ public class Event_Tutorial : MonoBehaviour
                     tutorialUI.SetActive(false);
                     Destroy(gameObject);
                 }
+
+                if(STATE_STATIC == 2)
+                {
+                    _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveAftermathAudio");
+                }
            }
         }
     }
@@ -114,6 +119,7 @@ public class Event_Tutorial : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveIntroAudio");
     }
+
 
     IEnumerator FinalSetup()
     {

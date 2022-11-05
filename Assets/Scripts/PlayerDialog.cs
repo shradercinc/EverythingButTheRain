@@ -62,6 +62,13 @@ public class PlayerDialog : MonoBehaviour
         yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
+    IEnumerator MaeveAftermathAudio()
+    {
+        talkSource.clip = maeveAftermath;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
     IEnumerator FinalIntroAudio()
     {
         Debug.Log("Playing Final Audio");
