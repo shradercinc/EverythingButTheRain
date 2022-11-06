@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ParkAndStreets.unity
     guid: ad09a7d2a818c9443ac63c13c0143a22
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0921274f2d9696041ac0bdb5d0aad75e
   m_configObjects: {}

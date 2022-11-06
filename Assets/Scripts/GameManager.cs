@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,48 +15,33 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        SceneManager.LoadSceneAsync((int)SceneIndexes.TITLE_SCREEN, LoadSceneMode.Additive);
     }
 
     void Start()
     {
-        UpdateGameState(GameState.SelectColor);
+
     }
 
-    public void UpdateGameState(GameState newState)
+    public void LoadScene()
     {
-        State = newState;
-
-        switch (newState)
-        {
-            case GameState.SelectColor:
-                HandleSelectColor();
-                break;
-            case GameState.PlayerTurn:
-                break;
-            case GameState.EnemyTurn:
-                break;
-            case GameState.Victory:
-                break;
-            case GameState.Lose:
-                break;
-            default:
-                throw new System.ArgumentOutOfRangeException(nameof(newState), newState, null);
-        }
-
-        OnGameStateChanged?.Invoke(newState);
-    }
-
-    private void HandleSelectColor()
-    {
-        throw new NotImplementedException();
+        SceneManager.UnloadSceneAsync((int)SceneIndexes.TITLE_SCREEN);
+        SceneManager.LoadSceneAsync((int)SceneIndexes.DAY_1, LoadSceneMode.Additive);
     }
 
     public enum GameState
     {
-        SelectColor,
-        PlayerTurn,
-        EnemyTurn,
-        Victory,
-        Lose
+        Menu,
+        Open,
+        Tutorial,
+        Maeve,
+        Final
+    }
+
+    public enum SceneIndexes
+    {
+        MANAGER = 0,
+        TITLE_SCREEN = 1,
+        DAY_1 = 2
     }
 }
