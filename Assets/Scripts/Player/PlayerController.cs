@@ -38,6 +38,13 @@ public class PlayerController : MonoBehaviour
     public float RAMod = 1f;
 
     [SerializeField]float counter = 0;
+    
+    
+    //Umbrella Particle VFX
+    [SerializeField] private ParticleSystem umbrellaParticles;
+    [SerializeField] [Range(0, 5)] private float maxYParticleSpd;
+    [SerializeField] [Range(0, 5)] private float maxRParticleSpd;
+    private bool _spinBurst;
 
     private void Awake()
     {
@@ -125,8 +132,9 @@ public class PlayerController : MonoBehaviour
 
         umbrellaRigid.AddRelativeTorque(playerUmbrella.up* scrollWheelDir, ForceMode.VelocityChange);
         umbrellaRigid.maxAngularVelocity = 12;
-
+        
         //Stopping the Umbrella when player stops spinning
+        var umbrellaParticlesEmission = umbrellaParticles.emission;
         if(scrollWheelDir == 0)
         {
             counter += Time.deltaTime;
@@ -134,14 +142,29 @@ public class PlayerController : MonoBehaviour
         else
         {
             counter = 0;
+            if (!_spinBurst)
+            {
+                _spinBurst = true;
+                umbrellaParticlesEmission.SetBurst(0, new ParticleSystem.Burst(0f, 30));
+            }
         }
 
         if(counter >= .35f)
         {
             //Debug.Log("Starting Stop");
             umbrellaRigid.angularVelocity = Vector3.Slerp(umbrellaRigid.angularVelocity, Vector3.zero, .1f);
+            _spinBurst = false;
+            umbrellaParticlesEmission.SetBurst(0, new ParticleSystem.Burst(0 ,0));
         }
 
+
+        // Changes particle behavior based on the umbrella's spin speed.
+        var proportion = Mathf.Clamp(1 - counter, 0, 1);
+        Debug.Log(proportion);
+        var vOL = umbrellaParticles.velocityOverLifetime;
+        vOL.radial = new ParticleSystem.MinMaxCurve(0, proportion * maxRParticleSpd);
+        vOL.y = new ParticleSystem.MinMaxCurve(proportion * maxYParticleSpd);
+        umbrellaParticlesEmission.rateOverTime = new ParticleSystem.MinMaxCurve(Mathf.Lerp(20, 80, proportion));
 
 
         //rain area scales off of a base modifier * umbrella rotation speed
