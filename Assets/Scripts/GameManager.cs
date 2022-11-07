@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameObject loadingScreen;
 
-    public GameState State;
 
     public static event Action<GameState> OnGameStateChanged;
 
