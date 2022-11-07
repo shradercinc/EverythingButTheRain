@@ -7,6 +7,7 @@ public class PlayerDialog : MonoBehaviour
 {
 
     [SerializeField]AudioSource talkSource;
+    public bool talking = false;
 
     //Clips for tutorial
     [SerializeField]AudioClip tutorialReact;

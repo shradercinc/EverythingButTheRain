@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource aud;
     [SerializeField] AudioClip[] Walk;
     [SerializeField] float stepRate = 10;
-    private float stepT = 0; 
+    private float stepT = 0;
 
     //Umbrella Movement
     [SerializeField] Transform playerUmbrella = null;
@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
 
     void UpdateStep()
     {
+    //setting and reseting the timer between step sound effects
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
             stepT -= Time.deltaTime;
