@@ -889,8 +889,8 @@ MonoBehaviour:
   RAMod: 0.5
   counter: 0
   umbrellaParticles: {fileID: 2320417815679656056}
-  maxYParticleSpd: 0
-  maxRParticleSpd: 0
+  maxYParticleSpd: 3
+  maxRParticleSpd: 3
 --- !u!143 &4895909425250471955
 CharacterController:
   m_ObjectHideFlags: 0
