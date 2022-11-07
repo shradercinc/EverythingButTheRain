@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-        stepT = 1 * walkSpeed * stepRate;
+        stepT = stepRate / walkSpeed;
     }
 
     void Update()
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         if (stepT <= 0)
         {
             aud.PlayOneShot(Walk[Random.Range(0, Walk.Length - 1)]);
-            stepT = walkSpeed / stepRate;
+            stepT = stepRate / walkSpeed;
         }
     }
 

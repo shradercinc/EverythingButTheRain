@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.37866, g: 325.1228, b: 430.3081, a: 1}
+  m_IndirectSpecularColor: {r: 262.23755, g: 324.92944, b: 430.0249, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5540,6 +5540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4895909425250471954, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
+      propertyPath: stepRate
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895909425250471954, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
       propertyPath: walkSpeed
       value: 4
       objectReference: {fileID: 0}
@@ -5623,6 +5628,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 39900756}
+    - target: {fileID: 7585845157400525000, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 562523076, guid: 36e23e4249ca63444ae296e065ffd449, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36e23e4249ca63444ae296e065ffd449, type: 3}
