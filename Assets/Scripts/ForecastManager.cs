@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,7 +41,7 @@ public class ForecastManager : MonoBehaviour
             int day = dateTotalDays % 30;
             DaysOfWeek currDay = (DaysOfWeek)(((int)firstDay + offsetIncrement) % 7);
 
-            var forecast = Instantiate(forecastPanel, forecastHolder.transform);
+            GameObject forecast = PrefabUtility.InstantiatePrefab(forecastPanel, forecastHolder.transform) as GameObject;
             var dateText =  forecast.transform.Find("Date").GetComponent<TMP_Text>();
             var dayText =  forecast.transform.Find("Day").GetComponent<TMP_Text>();
             var weatherSprite =  forecast.transform.Find("Image").GetComponent<Image>();
