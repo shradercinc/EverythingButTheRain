@@ -6,11 +6,16 @@ public class CrowdAud : MonoBehaviour
 {
     AudioSource aud;
     public float cDif = 0.1f;
+    public float Max = 0.8f;
+    public float Vol = 0;
+    public GameObject RC;
 
     // Start is called before the first frame update
     void Start()
     {
         aud = GetComponent<AudioSource>();
+        Max = aud.volume;
+        Vol = Max;
         aud.volume = 0.2f;
     }
 
@@ -36,9 +41,17 @@ public class CrowdAud : MonoBehaviour
         {
             aud.volume = 0.2f;
         }
-        if (aud.volume >= 0.8f)
+        if (aud.volume > Vol)
         {
-            aud.volume = 0.2f;
+            aud.volume -= 0.1f;
+        }
+        if (RC.GetComponent<RainColide>().talking == false)
+        {
+            Vol = Max;
+        }
+        else
+        {
+            Vol = Max * 0.5f;
         }
     }
 }
