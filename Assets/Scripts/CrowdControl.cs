@@ -53,6 +53,7 @@ public class CrowdControl : MonoBehaviour
         {
             _agent.speed = 10;
             _agent.angularSpeed = 300;
+            NextGoal();
         }
     }
 

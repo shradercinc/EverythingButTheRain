@@ -38,9 +38,15 @@ public class RainColide : MonoBehaviour
             var agentPos = agent.transform.position;
             var rainCollidePos = transform.position;
             var fleeDir = agentPos - new Vector3(rainCollidePos.x, agentPos.y, rainCollidePos.z);
+            agent.isWandering = true;
             agent.Flee(fleeDir);
             Debug.DrawRay(agent.transform.position, fleeDir, Color.red, 2f);
-            agent.isWandering = true;
+          
+        }
+
+        if (other.gameObject.CompareTag("Crowd Box"))
+        {
+            Destroy(other.gameObject);
         }
 
         if(other.gameObject.CompareTag("NPC"))
