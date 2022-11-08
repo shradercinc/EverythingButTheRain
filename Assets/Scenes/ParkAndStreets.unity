@@ -639,9 +639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371724a08eea28b409930a45c88dd1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Max: 0.8
-  Vol: 0
-  RC: {fileID: 456980047}
 --- !u!1001 &133362223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5334,7 +5331,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 81a06b14431055b4c891234f0ca307da, type: 3}
   - {fileID: 8300000, guid: ec425054cce3c024ba5c959712e49cb3, type: 3}
   - {fileID: 8300000, guid: 5d6d13eab741cf74eb98b3e0da615419, type: 3}
-  aud: {fileID: 0}
 --- !u!1001 &1539557815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5520,6 +5516,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2320417815679656056, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3571124179613901126, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: clips.Array.size
