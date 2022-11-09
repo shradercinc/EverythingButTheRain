@@ -9,6 +9,9 @@ public class PlayerDialog : MonoBehaviour
     [SerializeField]AudioSource talkSource;
     public bool talking = false;
 
+    //Clips for start
+    [SerializeField] AudioClip startDialog;
+
     //Clips for tutorial
     [SerializeField]AudioClip tutorialReact;
     [SerializeField] AudioClip tutorialAftermath;
@@ -16,6 +19,10 @@ public class PlayerDialog : MonoBehaviour
     //Clips for Maeve
     [SerializeField] AudioClip maeveReact;
     [SerializeField] AudioClip maeveAftermath;
+
+    //Clips for final
+    [SerializeField] AudioClip finalReact;
+    [SerializeField] AudioClip finalAftermath;
 
 
     private void Awake()
@@ -44,6 +51,13 @@ public class PlayerDialog : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+    }
+
+    IEnumerator StartGameAudio()
+    {
+        talkSource.clip = startDialog;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
     IEnumerator TutorialAudio()

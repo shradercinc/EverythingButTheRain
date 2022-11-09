@@ -25,6 +25,9 @@ public class Event_Tutorial : MonoBehaviour
     // 3 = Final
     public int STATE_STATIC = -1;
 
+    public EventStatus STATUS;
+
+
 
     //Tracks the Rigidbody of player's umbrella
     Rigidbody umbRigid;
@@ -39,13 +42,18 @@ public class Event_Tutorial : MonoBehaviour
 
     void Start()
     {
-        
+        STATUS = EventStatus.START;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(inTrig)
+
+        if(STATUS == EventStatus.START)
+        {
+            Debug.Log("This is still true");
+        }
+        if (inTrig)
         {
             //If the player spins like they were supposed to
 
@@ -106,6 +114,7 @@ public class Event_Tutorial : MonoBehaviour
     //Then afterwards, do your checks for the specific events
     //Are they doing the same thing? Then call the same code
 
+
     IEnumerator TutorialSetup()
     {
         Debug.Log("Is playing tutorial");
@@ -133,9 +142,13 @@ public class Event_Tutorial : MonoBehaviour
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("FinalIntroAudio");
     }
 
-    //This object is controlling the tutorial event for the player
+}
 
-    //The player will be blocked from progressing down the street, due to a crowd in front of the dorm
-
-    //The player will hear an voice clip play, and have UI appear which shows the player how to use their umbrella
+public enum EventStatus
+{
+    START,
+    TUTORIAL,
+    MAEVE,
+    FINAL,
+    END
 }
