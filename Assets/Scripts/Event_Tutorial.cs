@@ -61,6 +61,7 @@ public class Event_Tutorial : MonoBehaviour
                 if(STATE_STATIC == 2)
                 {
                     _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveAftermathAudio");
+                    Destroy(gameObject);
                 }
            }
         }
@@ -76,7 +77,7 @@ public class Event_Tutorial : MonoBehaviour
                 if(STATE_STATIC == 1)
                 {
                     //gm.TutorialPlayout();
-                    StartCoroutine("TutorialSetup");
+                    StartCoroutine("TutorialSetup"); //Make a enum variable that equals the variable string
                 }
                 else if(STATE_STATIC == 2)
                 {
@@ -101,6 +102,10 @@ public class Event_Tutorial : MonoBehaviour
         inTrig = false;
     }
 
+    //Have a general event state
+    //Then afterwards, do your checks for the specific events
+    //Are they doing the same thing? Then call the same code
+
     IEnumerator TutorialSetup()
     {
         Debug.Log("Is playing tutorial");
@@ -116,8 +121,7 @@ public class Event_Tutorial : MonoBehaviour
         hasPlayed = true;
         myMesh.enabled = false;
         Debug.Log("We will cue Maeve");
-        yield return new WaitForSeconds(2f);
-        _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveIntroAudio");
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveIntroAudio");
     }
 
 
@@ -126,8 +130,7 @@ public class Event_Tutorial : MonoBehaviour
         hasPlayed = true;
         myMesh.enabled = false;
         Debug.Log("We will cue Final");
-        yield return new WaitForSeconds(2f);
-        _player.GetComponent<PlayerDialog>().StartCoroutine("FinalIntroAudio");
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("FinalIntroAudio");
     }
 
     //This object is controlling the tutorial event for the player
