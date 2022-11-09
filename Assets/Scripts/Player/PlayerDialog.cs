@@ -5,11 +5,12 @@ using UnityEngine;
 //This is the script responsible for playing Evan's Dialog
 public class PlayerDialog : MonoBehaviour
 {
-
+    [Header("General")]
     [SerializeField]AudioSource talkSource;
     public bool talking = false;
 
     //Clips for start
+    [Header("Day 1 Audio")]
     [SerializeField] AudioClip startDialog;
 
     //Clips for tutorial
@@ -23,6 +24,9 @@ public class PlayerDialog : MonoBehaviour
     //Clips for final
     [SerializeField] AudioClip finalReact;
     [SerializeField] AudioClip finalAftermath;
+
+    [Header("Day 2 Audio")]
+    [SerializeField] AudioClip twoStartDialog;
 
 
     private void Awake()
@@ -102,7 +106,7 @@ public class PlayerDialog : MonoBehaviour
     {
         talkSource.clip = finalAftermath;
         talkSource.Play();
-        yield return new WaitWhile(() => talkSource.isPlaying);
+        yield return new WaitWhile(() => talkSource.isPlaying); 
     }
 
 }

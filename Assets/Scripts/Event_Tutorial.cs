@@ -74,7 +74,7 @@ public class Event_Tutorial : MonoBehaviour
                 }
                 if(STATE_STATIC == 3)
                 {
-                    _player.GetComponent<PlayerDialog>().StartCoroutine();
+                    //_player.GetComponent<PlayerDialog>().StartCoroutine();
                 }
            }
         }
@@ -91,14 +91,17 @@ public class Event_Tutorial : MonoBehaviour
                 {
                     //gm.TutorialPlayout();
                     StartCoroutine("TutorialSetup"); //Make a enum variable that equals the variable string
+                    STATUS = EventStatus.TUTORIAL;
                 }
                 else if(STATE_STATIC == 2)
                 {
                     StartCoroutine("MaeveSetup");
+                    STATUS = EventStatus.MAEVE;
                 }
                 else if(STATE_STATIC == 3)
                 {
                     StartCoroutine("FinalSetup");
+                    STATUS = EventStatus.FINAL;
                 }
                 else
                 {
@@ -138,6 +141,7 @@ public class Event_Tutorial : MonoBehaviour
     {
         hasPlayed = true;
         myMesh.enabled = false;
+        GameObject.FindGameObjectWithTag("NPC").GetComponent<NPCFollow>().isFollowing = true;
         Debug.Log("We will cue Maeve");
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveIntroAudio");
     }
