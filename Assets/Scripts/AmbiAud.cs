@@ -19,5 +19,22 @@ public class AmbiAud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Talker.GetComponent<PlayerDialog>().talking == false)
+        {
+            Vol = Max;
+        }
+        else
+        {
+            Vol = Max / 2;
+        }
+
+        if (aud.volume <= Vol)
+        {
+            aud.volume += 0.05f;
+        }
+        else
+        {
+            aud.volume -= 0.05f;
+        }
     }
 }

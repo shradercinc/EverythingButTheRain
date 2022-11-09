@@ -20,7 +20,6 @@ public class PlayerDialog : MonoBehaviour
 
     private void Awake()
     {
-        talkSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
