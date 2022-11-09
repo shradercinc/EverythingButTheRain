@@ -8124,6 +8124,12 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8818839926644117251, guid: 69c9f33707ceb144487512eb4f6acd51,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: b45d2063706e2a4408469448eb26a0ab,
+        type: 2}
     - target: {fileID: 8818839926660689624, guid: 69c9f33707ceb144487512eb4f6acd51,
         type: 3}
       propertyPath: m_StaticEditorFlags

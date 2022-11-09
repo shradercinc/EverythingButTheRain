@@ -37,7 +37,8 @@ public class ForecastManager : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime / transitionTime;
-            forecastHolder.transform.localPosition = new Vector3(t * slideLength, -100);
+            float v = EaseInOutElastic(0, 1, t);
+            forecastHolder.transform.localPosition = new Vector3(v * slideLength, -100);
             yield return null;
         }
 
@@ -60,7 +61,7 @@ public class ForecastManager : MonoBehaviour
     {
         int totalDays = (secondDate.x - firstDate.x) * 30 + (secondDate.y - firstDate.y);
         slideLength = -(ForecastIncrements * totalDays);
-        totalDays += 7;
+        totalDays += 15;
 
         int firstDateTotalDays = firstDate.x * 30 + firstDate.y;
 
@@ -71,7 +72,7 @@ public class ForecastManager : MonoBehaviour
 
         for (int i = 0; i < totalDays; i++)
         {
-            int offsetIncrement = i - 3;
+            int offsetIncrement = i - 7;
             int dateTotalDays = firstDateTotalDays + offsetIncrement;
             int month = dateTotalDays / 30;
             int day = dateTotalDays % 30;
@@ -128,6 +129,37 @@ public class ForecastManager : MonoBehaviour
 
             forecast.transform.localPosition = new Vector3(offsetIncrement * ForecastIncrements, 0, 0);
         }
+    }
+    
+    /**
+     * https://gist.github.com/cjddmut/d789b9eb78216998e95c
+     * @author by cjddmut
+     */
+    public static float EaseInOutElastic(float start, float end, float value)
+    {
+        end -= start;
+
+        float d = 1f;
+        float p = d * .3f;
+        float s;
+        float a = 0;
+
+        if (value == 0) return start;
+
+        if ((value /= d * 0.5f) == 2) return start + end;
+
+        if (a == 0f || a < Mathf.Abs(end))
+        {
+            a = end;
+            s = p / 4;
+        }
+        else
+        {
+            s = p / (2 * Mathf.PI) * Mathf.Asin(end / a);
+        }
+
+        if (value < 1) return -0.5f * (a * Mathf.Pow(2, 10 * (value -= 1)) * Mathf.Sin((value * d - s) * (2 * Mathf.PI) / p)) + start;
+        return a * Mathf.Pow(2, -10 * (value -= 1)) * Mathf.Sin((value * d - s) * (2 * Mathf.PI) / p) * 0.5f + end + start;
     }
 
     private enum DaysOfWeek
