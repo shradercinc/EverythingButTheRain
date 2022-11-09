@@ -51,7 +51,8 @@ public class Event_Tutorial : MonoBehaviour
 
         if(STATUS == EventStatus.START)
         {
-            Debug.Log("This is still true");
+            StartCoroutine(StartSetup());
+            STATUS = EventStatus.VOID;
         }
         if (inTrig)
         {
@@ -70,6 +71,10 @@ public class Event_Tutorial : MonoBehaviour
                 {
                     _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveAftermathAudio");
                     Destroy(gameObject);
+                }
+                if(STATE_STATIC == 3)
+                {
+                    _player.GetComponent<PlayerDialog>().StartCoroutine();
                 }
            }
         }
@@ -114,6 +119,10 @@ public class Event_Tutorial : MonoBehaviour
     //Then afterwards, do your checks for the specific events
     //Are they doing the same thing? Then call the same code
 
+    IEnumerator StartSetup()
+    {
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("StartGameAudio");
+    }
 
     IEnumerator TutorialSetup()
     {
@@ -150,5 +159,6 @@ public enum EventStatus
     TUTORIAL,
     MAEVE,
     FINAL,
-    END
+    END,
+    VOID //This is a empty event for right now. Nothing should happen when event is set to this
 }

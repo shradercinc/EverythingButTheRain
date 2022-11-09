@@ -93,7 +93,16 @@ public class PlayerDialog : MonoBehaviour
     IEnumerator FinalIntroAudio()
     {
         Debug.Log("Playing Final Audio");
-        yield return new WaitForSeconds(1f);
+        talkSource.clip = finalReact;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+    
+    IEnumerator FinalAftermathAudio()
+    {
+        talkSource.clip = finalAftermath;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
 }
