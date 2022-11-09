@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class ForecastManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class ForecastManager : MonoBehaviour
     [SerializeField] private Vector2Int secondDate;
     [SerializeField] private Sprite sun;
     [SerializeField] private Sprite rain;
+
+    [SerializeField] private GameObject weatherOverview;
+    [SerializeField] private GameObject info;
 
     [SerializeField] private float transitionTime;
     
@@ -30,6 +34,14 @@ public class ForecastManager : MonoBehaviour
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("ParkAndStreets");
         asyncOperation.allowSceneActivation = false;
+        int currPosX = 0;
+
+        var timeTxt = info.transform.Find("Time").GetComponent<TMP_Text>();
+        var conditionTxt = info.transform.Find("Condition").GetComponent<TMP_Text>();
+        var temperatureTxt = weatherOverview.transform.Find("Temperature").GetComponent<TMP_Text>();
+        var precipTxt = weatherOverview.transform.Find("Precipitation").GetComponent<TMP_Text>();
+        var humidityTxt = weatherOverview.transform.Find("Humidity").GetComponent<TMP_Text>();
+        var windTxt = weatherOverview.transform.Find("Wind").GetComponent<TMP_Text>();
 
         yield return null;
         
@@ -38,7 +50,58 @@ public class ForecastManager : MonoBehaviour
         {
             t += Time.deltaTime / transitionTime;
             float v = EaseInOutElastic(0, 1, t);
-            forecastHolder.transform.localPosition = new Vector3(v * slideLength, -100);
+            var pos = new Vector3(v * slideLength, -100);
+            forecastHolder.transform.localPosition = pos;
+
+            var posInt = Mathf.RoundToInt(-pos.x / ForecastIncrements);
+            if (posInt != currPosX)
+            {
+                Debug.Log(posInt);
+                currPosX = posInt;
+                DaysOfWeek currDay = (DaysOfWeek)((currPosX + 7) % 7);
+                
+                switch (currDay)
+                {
+                    case DaysOfWeek.Sunday:
+                        timeTxt.text = "Sunday, 5:00 PM";
+                        break;
+                    case DaysOfWeek.Monday:
+                        timeTxt.text = "Monday, 8:00 AM";
+                        break;
+                    case DaysOfWeek.Tuesday:
+                        timeTxt.text = "Tuesday, 8:00 AM";
+                        break;
+                    case DaysOfWeek.Wednesday:
+                        timeTxt.text = "Wednesday, 8:00 AM";
+                        break;
+                    case DaysOfWeek.Thursday:
+                        timeTxt.text = "Thursday, 8:00 AM";
+                        break;
+                    case DaysOfWeek.Friday:
+                        timeTxt.text = "Friday, 8:00 AM";
+                        break;
+                    case DaysOfWeek.Saturday:
+                        timeTxt.text = "Saturday, 5:00 PM";
+                        break;
+                }
+
+                temperatureTxt.text = Random.Range(50, 72).ToString();
+                windTxt.text = "Wind: " + Random.Range(3, 10) + "mph";
+
+                if (currPosX == firstDayIndex || currPosX == secondDayIndex)
+                {
+                    conditionTxt.text = "Rainy";
+                    precipTxt.text = "Precipitation: 95%";
+                    humidityTxt.text = "Humidity: 88%";
+                }
+                else
+                {
+                    conditionTxt.text = "Sunny";
+                    precipTxt.text = "Precipitation: " + Random.Range(0, 20) + "%";
+                    humidityTxt.text = "Humidity: " + Random.Range(30, 60) + "%";
+                }
+            }
+            
             yield return null;
         }
 
@@ -76,7 +139,7 @@ public class ForecastManager : MonoBehaviour
             int dateTotalDays = firstDateTotalDays + offsetIncrement;
             int month = dateTotalDays / 30;
             int day = dateTotalDays % 30;
-            DaysOfWeek currDay = (DaysOfWeek)(((int)firstDay + offsetIncrement) % 7);
+            DaysOfWeek currDay = (DaysOfWeek)(((int)firstDay + offsetIncrement + 7) % 7);
 
             GameObject forecast = PrefabUtility.InstantiatePrefab(forecastPanel, forecastHolder.transform) as GameObject;
             var dateText =  forecast.transform.Find("Date").GetComponent<TMP_Text>();
