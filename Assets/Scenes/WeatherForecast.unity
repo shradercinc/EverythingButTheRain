@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5530,6 +5530,9 @@ MonoBehaviour:
   rain: {fileID: 21300000, guid: c78b5650e44548243ab8a67e4fe645a5, type: 3}
   weatherOverview: {fileID: 709433984}
   info: {fileID: 2104091012}
+  bg: {fileID: 1077048018}
+  rainyColor: {r: 0.24705882, g: 0.29411766, b: 0.41568628, a: 0.39215687}
+  sunnyColor: {r: 0.40908435, g: 0.5081245, b: 0.5754717, a: 0.39215687}
   transitionTime: 8
   slideLength: -6160
   firstDayIndex: 0
@@ -9901,7 +9904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

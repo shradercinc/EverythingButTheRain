@@ -1,16 +1,15 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class ForecastManager : MonoBehaviour
 {
+    [Header("Forecast Fields")]
     [SerializeField] private GameObject forecastHolder;
     [SerializeField] private GameObject forecastPanel;
     [SerializeField] private Vector2Int firstDate;
@@ -19,13 +18,19 @@ public class ForecastManager : MonoBehaviour
     [SerializeField] private Sprite sun;
     [SerializeField] private Sprite rain;
 
+    [Header("UI Display Fields")]
     [SerializeField] private GameObject weatherOverview;
     [SerializeField] private GameObject info;
+    [SerializeField] private GameObject bg;
+    [SerializeField] private Color rainyColor;
+    [SerializeField] private Color sunnyColor;
 
+    [Header("Animation Fields")]
     [SerializeField] private float transitionTime;
     
     private const float ForecastIncrements = 140;
 
+    [Header("Generated Fields")]
     [SerializeField] private float slideLength;
     [SerializeField] private int firstDayIndex;
     [SerializeField] private int secondDayIndex;
@@ -35,6 +40,7 @@ public class ForecastManager : MonoBehaviour
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("ParkAndStreets");
         asyncOperation.allowSceneActivation = false;
         int currPosX = 0;
+        float rainShine = 0;
 
         var timeTxt = info.transform.Find("Time").GetComponent<TMP_Text>();
         var conditionTxt = info.transform.Find("Condition").GetComponent<TMP_Text>();
@@ -42,6 +48,7 @@ public class ForecastManager : MonoBehaviour
         var precipTxt = weatherOverview.transform.Find("Precipitation").GetComponent<TMP_Text>();
         var humidityTxt = weatherOverview.transform.Find("Humidity").GetComponent<TMP_Text>();
         var windTxt = weatherOverview.transform.Find("Wind").GetComponent<TMP_Text>();
+        var bgImage = bg.GetComponent<UnityEngine.UI.Image>();
 
         yield return null;
         
@@ -52,13 +59,14 @@ public class ForecastManager : MonoBehaviour
             float v = EaseInOutElastic(0, 1, t);
             var pos = new Vector3(v * slideLength, -100);
             forecastHolder.transform.localPosition = pos;
-
+            
             var posInt = Mathf.RoundToInt(-pos.x / ForecastIncrements);
             if (posInt != currPosX)
             {
                 Debug.Log(posInt);
                 currPosX = posInt;
                 DaysOfWeek currDay = (DaysOfWeek)((currPosX + 7) % 7);
+                rainShine += 0.1f;
                 
                 switch (currDay)
                 {
@@ -93,12 +101,15 @@ public class ForecastManager : MonoBehaviour
                     conditionTxt.text = "Rainy";
                     precipTxt.text = "Precipitation: 95%";
                     humidityTxt.text = "Humidity: 88%";
+                    bgImage.color = rainyColor;
+                    rainShine = 0;
                 }
                 else
                 {
                     conditionTxt.text = "Sunny";
                     precipTxt.text = "Precipitation: " + Random.Range(0, 20) + "%";
                     humidityTxt.text = "Humidity: " + Random.Range(30, 60) + "%";
+                    bgImage.color = Color.Lerp(rainyColor, sunnyColor, rainShine);
                 }
             }
             
