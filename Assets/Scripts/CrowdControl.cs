@@ -45,7 +45,7 @@ public class CrowdControl : MonoBehaviour
         _agent.CalculatePath(newGoal, path);
         if (path.status != NavMeshPathStatus.PathInvalid)
         {
-            _agent.SetDestination(path.corners[^1]);
+            _agent.SetPath(path);
             _agent.speed = 10;
             _agent.angularSpeed = 500;
         }
