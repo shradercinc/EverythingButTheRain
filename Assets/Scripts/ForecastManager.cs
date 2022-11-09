@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ForecastManager : MonoBehaviour
@@ -14,16 +17,49 @@ public class ForecastManager : MonoBehaviour
     [SerializeField] private Vector2Int secondDate;
     [SerializeField] private Sprite sun;
     [SerializeField] private Sprite rain;
+
+    [SerializeField] private float transitionTime;
     
     private const float ForecastIncrements = 140;
 
-    private int _firstDayIndex;
-    private int _secondDayIndex;
+    [SerializeField] private float slideLength;
+    [SerializeField] private int firstDayIndex;
+    [SerializeField] private int secondDayIndex;
+
+    IEnumerator ForecastLoadingScreen()
+    {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("ParkAndStreets");
+        asyncOperation.allowSceneActivation = false;
+
+        yield return null;
+        
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime / transitionTime;
+            forecastHolder.transform.localPosition = new Vector3(t * slideLength, -100);
+            yield return null;
+        }
+
+        asyncOperation.allowSceneActivation = true;
+        yield return null;
+
+        if (asyncOperation.progress >= 0.99f)
+        {
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(ForecastLoadingScreen());
+    }
 
     [ContextMenu("GenerateDays")]
     public void GenerateDays()
     {
         int totalDays = (secondDate.x - firstDate.x) * 30 + (secondDate.y - firstDate.y);
+        slideLength = -(ForecastIncrements * totalDays);
         totalDays += 7;
 
         int firstDateTotalDays = firstDate.x * 30 + firstDate.y;
@@ -78,12 +114,12 @@ public class ForecastManager : MonoBehaviour
             if ((month == firstDate.x && day == firstDate.y))
             {
                 weatherSprite.sprite = rain;
-                _firstDayIndex = offsetIncrement;
+                firstDayIndex = offsetIncrement;
             }
             else if (month == secondDate.x && day == secondDate.y)
             {
                 weatherSprite.sprite = rain;
-                _secondDayIndex = offsetIncrement;
+                secondDayIndex = offsetIncrement;
             } 
             else
             {
