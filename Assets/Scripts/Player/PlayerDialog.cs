@@ -32,7 +32,14 @@ public class PlayerDialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (talkSource.isPlaying == true)
+        {
+            talking = true;
+        }
+        else
+        {
+            talking = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
