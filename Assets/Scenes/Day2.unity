@@ -10532,9 +10532,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
+      propertyPath: stopRaining
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c56fc3106660f4284cfeb7a7f9b791, type: 3}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: groupOneReact
+      value: 
+      objectReference: {fileID: 8300000, guid: 3275b23ba387bc047900a41489bf6659, type: 3}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: groupTwoReact
+      value: 
+      objectReference: {fileID: 8300000, guid: 4901646f4314a5749b08d2a7ded4320e, type: 3}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: dayTwoEndReact
+      value: 
+      objectReference: {fileID: 8300000, guid: 1785f0ae35cf58d40a0ec2c13657c213, type: 3}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
       propertyPath: twoStartDialog
       value: 
-      objectReference: {fileID: 8300000, guid: c92ab664c22879c44a51f5c65f0547c3, type: 3}
+      objectReference: {fileID: 8300000, guid: aa3fd9290f8b499479bde8926d76d52c, type: 3}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: groupThreeReact
+      value: 
+      objectReference: {fileID: 8300000, guid: 530ce9e4aa285114b8969fa84e488881, type: 3}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: groupOneAftermath
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f51c36c6a4584449bab0c4f2ab4cdf1, type: 3}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: groupTwoAftermath
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cdccbe2256adca4089ebea00af4f6db, type: 3}
     m_RemovedComponents:
     - {fileID: 562523076, guid: 36e23e4249ca63444ae296e065ffd449, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36e23e4249ca63444ae296e065ffd449, type: 3}
