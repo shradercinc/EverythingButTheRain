@@ -1123,6 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8ba648dffeb34439e596989f068836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  f2b: {fileID: 0}
   _player: {fileID: 4895909424677455179}
   tutorialUI: {fileID: 0}
   playerReactClip: {fileID: 0}
@@ -7695,6 +7696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308641030331391007, guid: db5ca6a14dbc0a84d832b01a568e6f14,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: Day1to2Loading
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db5ca6a14dbc0a84d832b01a568e6f14, type: 3}

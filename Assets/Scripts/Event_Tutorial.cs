@@ -7,6 +7,7 @@ public class Event_Tutorial : MonoBehaviour
 {
 
     Scene currentScene;
+    [SerializeField] private FadeToBlack f2b;
 
     MeshRenderer myMesh;
     public GameObject _player;
@@ -186,6 +187,7 @@ public class Event_Tutorial : MonoBehaviour
 
     IEnumerator DayTwoGroupOneSetup()
     {
+        f2b.Fade();
         yield return null;
     }
 

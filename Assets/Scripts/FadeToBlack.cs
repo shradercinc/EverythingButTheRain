@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
 {
+    [SerializeField] private string sceneToLoad;
     public bool isComplete;
     private Image _fadeToBlack;
     // Start is called before the first frame update
@@ -34,6 +36,8 @@ public class FadeToBlack : MonoBehaviour
     
     IEnumerator FadeIntoBlack()
     {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
+        asyncOperation.allowSceneActivation = false;
         isComplete = false;
         float t = 0;
         while (t < 1)
@@ -43,7 +47,9 @@ public class FadeToBlack : MonoBehaviour
             yield return null;
         }
 
+        asyncOperation.allowSceneActivation = true;
         isComplete = true;
         _fadeToBlack.color = new Color(0, 0, 0, 1);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }
