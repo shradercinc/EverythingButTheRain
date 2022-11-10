@@ -4369,8 +4369,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719073210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100.18, y: 2.51, z: 140.2}
-  m_LocalScale: {x: 6.3262835, y: 5, z: 78.045784}
+  m_LocalPosition: {x: -100.18, y: 2.51, z: 139.36}
+  m_LocalScale: {x: 6.3262835, y: 5, z: 70.50002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -10315,6 +10315,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: skyManage
+      value: 
+      objectReference: {fileID: 2052975995}
     - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: startDialog

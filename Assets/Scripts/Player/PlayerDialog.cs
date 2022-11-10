@@ -8,6 +8,7 @@ public class PlayerDialog : MonoBehaviour
     [Header("General")]
     [SerializeField]AudioSource talkSource;
     public bool talking = false;
+    [SerializeField]PostProcessingManager skyManage;
 
     //Clips for start
     [Header("Day 1 Audio")]
@@ -160,6 +161,7 @@ public class PlayerDialog : MonoBehaviour
         Debug.Log("Playing Group 2 Aftermath");
         talkSource.clip = groupTwoAftermath;
         talkSource.Play();
+        skyManage.BrightenDay();
         yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
