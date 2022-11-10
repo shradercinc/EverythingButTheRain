@@ -40,6 +40,9 @@ public class PlayerDialog : MonoBehaviour
     [SerializeField] AudioClip groupThreeReact;
     [SerializeField] AudioClip groupThreeAftermath;
 
+    //Clip for ending
+    [SerializeField] AudioClip dayTwoEndReact;
+
 
     private void Awake()
     {
