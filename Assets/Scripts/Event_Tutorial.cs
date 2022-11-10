@@ -28,6 +28,13 @@ public class Event_Tutorial : MonoBehaviour
     // 2 = Maeve
     // 3 = Final
     // 4 = End (Doors to NYU)
+    
+    //Day 2
+    // 5 = Group 1
+    // 6 = Group 2
+    // 7 = Group 3
+    // 8 = 
+
     public int STATE_STATIC = -1;
 
     public EventStatus STATUS;
@@ -60,6 +67,7 @@ public class Event_Tutorial : MonoBehaviour
             if (currentScene.name == "Day2") //If we are in Day 2
             {
                 StartCoroutine(StartDayTwoSetup());
+                STATUS = EventStatus.VOID;
             }
             else
             {
@@ -82,6 +90,7 @@ public class Event_Tutorial : MonoBehaviour
 
                 if(STATE_STATIC == 2)
                 {
+                    GameObject.FindGameObjectWithTag("NPC").GetComponent<NPCFollow>().isFollowing = true;
                     _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveAftermathAudio");
                     Destroy(gameObject);
                 }
@@ -90,7 +99,22 @@ public class Event_Tutorial : MonoBehaviour
                     _player.GetComponent<PlayerDialog>().StartCoroutine("FinalAftermathAudio");
                     Destroy(gameObject);
                 }
-           }
+                if (STATE_STATIC == 5) //Day 2 Group1
+                {
+                    _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupOneAftermathAudio");
+                    Destroy(gameObject);
+                }
+                if (STATE_STATIC == 6) //Day 2 Group2
+                {
+                    _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupTwoAftermathAudio");
+                    Destroy(gameObject);
+                }
+                if (STATE_STATIC == 7) //Day 2 Group3
+                {
+                    _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupThreeAftermathAudio");
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 
@@ -117,10 +141,34 @@ public class Event_Tutorial : MonoBehaviour
                     StartCoroutine("FinalSetup");
                     STATUS = EventStatus.FINAL;
                 }
-                else if(STATE_STATIC == 4) //First group in Day 2
+                else if(STATE_STATIC == 4) //End of the day in Day 1
                 {
                     StartCoroutine(DayTwoGroupOneSetup());
                     STATUS = EventStatus.DAYTWO_EVENT;
+                }
+                else if (STATE_STATIC == 5) //Day 2 First Group
+                {
+                    StartCoroutine(GroupOneDayTwoSetup());
+                    STATUS = EventStatus.DAYTWO_EVENT;
+                }
+                else if (STATE_STATIC == 6) //Day2 Second Group
+                {
+                    StartCoroutine(GroupTwoDayTwoSetup());
+                    STATUS = EventStatus.DAYTWO_EVENT;
+                }
+                else if (STATE_STATIC == 7) //Day2 Third Group
+                {
+                    StartCoroutine(GroupThreeDayTwoSetup());
+                    STATUS = EventStatus.DAYTWO_EVENT;
+                }
+                else if (STATE_STATIC == 8) //End dialog (Before you enter classroom)
+                {
+                    StartCoroutine(EndingDialogDayTwoSetup());
+                    STATUS = EventStatus.DAYTWO_EVENT;
+                }
+                else if(STATE_STATIC == 9)//End of scene (walk through) door
+                {
+
                 }
                 else
                 {
@@ -160,7 +208,6 @@ public class Event_Tutorial : MonoBehaviour
     {
         hasPlayed = true;
         myMesh.enabled = false;
-        GameObject.FindGameObjectWithTag("NPC").GetComponent<NPCFollow>().isFollowing = true;
         Debug.Log("We will cue Maeve");
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("MaeveIntroAudio");
     }
@@ -185,11 +232,43 @@ public class Event_Tutorial : MonoBehaviour
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("StartTwoAudio");
     }
 
+    //We should rename this as it will get confusing
     IEnumerator DayTwoGroupOneSetup()
     {
         f2b.Fade();
         yield return null;
     }
+
+    //I want to put this into DayTwoGroupOneSetup(), but I'm worried about messing up Ryan's fade code
+    IEnumerator GroupOneDayTwoSetup()
+    {
+        hasPlayed = true;
+        myMesh.enabled = false;
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupOneIntroAudio");
+    }
+
+    IEnumerator GroupTwoDayTwoSetup()
+    {
+        hasPlayed = true;
+        myMesh.enabled = false;
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupTwoIntroAudio");
+    }
+
+    IEnumerator GroupThreeDayTwoSetup()
+    {
+        hasPlayed = true;
+        myMesh.enabled = false;
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupThreeIntroAudio");
+    }
+
+    IEnumerator EndingDialogDayTwoSetup()
+    {
+        hasPlayed = true;
+        myMesh.enabled = false;
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TwoEndReactAudio");
+        Destroy(gameObject);
+    }
+
 
 }
 

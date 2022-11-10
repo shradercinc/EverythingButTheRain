@@ -131,4 +131,60 @@ public class PlayerDialog : MonoBehaviour
         yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
+    IEnumerator TwoGroupOneIntroAudio()
+    {
+        Debug.Log("Playing Group 1 React");
+        talkSource.clip = groupOneReact;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
+    IEnumerator TwoGroupOneAftermathAudio()
+    {
+        Debug.Log("Playing Group 1 Aftermath");
+        talkSource.clip = groupOneAftermath;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
+    IEnumerator TwoGroupTwoIntroAudio()
+    {
+        Debug.Log("Playing Group 2 React");
+        talkSource.clip = groupTwoReact;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
+    IEnumerator TwoGroupTwoAftermathAudio()
+    {
+        Debug.Log("Playing Group 2 Aftermath");
+        talkSource.clip = groupTwoAftermath;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
+    IEnumerator TwoGroupThreeIntroAudio()
+    {
+        Debug.Log("Playing Group 3 React");
+        talkSource.clip = groupThreeReact;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
+    IEnumerator TwoGroupThreeAftermathAudio()
+    {
+        Debug.Log("Playing Group 3 Aftermath");
+        talkSource.clip = groupThreeAftermath;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
+    IEnumerator TwoEndReactAudio()
+    {
+        Debug.Log("Playing EndingDialog");
+        talkSource.clip = dayTwoEndReact;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
+    }
+
 }
