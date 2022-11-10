@@ -9,6 +9,9 @@ using Random = UnityEngine.Random;
 
 public class ForecastManager : MonoBehaviour
 {
+    [Header("Loaded Scene")]
+    [SerializeField]  private string loadScene;
+    
     [Header("Forecast Fields")]
     [SerializeField] private GameObject forecastHolder;
     [SerializeField] private GameObject forecastPanel;
@@ -37,7 +40,7 @@ public class ForecastManager : MonoBehaviour
 
     IEnumerator ForecastLoadingScreen()
     {
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("ParkAndStreets");
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(loadScene);
         asyncOperation.allowSceneActivation = false;
         int currPosX = 0;
         float rainShine = 0;
