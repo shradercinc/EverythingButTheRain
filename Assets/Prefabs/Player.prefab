@@ -903,9 +903,9 @@ GameObject:
   - component: {fileID: 4895909425250472174}
   - component: {fileID: 4895909425250472175}
   - component: {fileID: 4895909425250471954}
+  - component: {fileID: 7645079102128520348}
   - component: {fileID: 4895909425250471955}
   - component: {fileID: 6179593014973920902}
-  - component: {fileID: 7645079102128520348}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1034,6 +1034,28 @@ MonoBehaviour:
   umbrellaParticles: {fileID: 2320417815679656056}
   maxYParticleSpd: 3
   maxRParticleSpd: 3
+--- !u!114 &7645079102128520348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895909425250472168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de290c75f8fd4046b090e328dd9ba3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkSource: {fileID: 6680968370721046148}
+  talking: 0
+  startDialog: {fileID: 0}
+  tutorialReact: {fileID: 0}
+  tutorialAftermath: {fileID: 0}
+  maeveReact: {fileID: 0}
+  maeveAftermath: {fileID: 0}
+  finalReact: {fileID: 0}
+  finalAftermath: {fileID: 0}
+  twoStartDialog: {fileID: 0}
 --- !u!143 &4895909425250471955
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1148,24 +1170,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7645079102128520348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4895909425250472168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de290c75f8fd4046b090e328dd9ba3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  talkSource: {fileID: 6680968370721046148}
-  talking: 0
-  tutorialReact: {fileID: 0}
-  tutorialAftermath: {fileID: 0}
-  maeveReact: {fileID: 0}
-  maeveAftermath: {fileID: 0}
 --- !u!1 &4895909425301839982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cDif: 0.1
+  Talker: {fileID: 0}
 --- !u!82 &5120318547035900455
 AudioSource:
   m_ObjectHideFlags: 0
