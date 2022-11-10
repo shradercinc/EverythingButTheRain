@@ -236,7 +236,7 @@ public class Event_Tutorial : MonoBehaviour
     IEnumerator DayTwoGroupOneSetup()
     {
         f2b.Fade();
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
     }
 
     //I want to put this into DayTwoGroupOneSetup(), but I'm worried about messing up Ryan's fade code
@@ -268,6 +268,11 @@ public class Event_Tutorial : MonoBehaviour
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TwoEndReactAudio");
         Destroy(gameObject);
     }
+
+    //IEnumerator EndGame()
+    //{
+         
+    //}
 
 
 }

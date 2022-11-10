@@ -40,6 +40,7 @@ public class PlayerDialog : MonoBehaviour
     //Clips for group three
     [SerializeField] AudioClip groupThreeReact;
     [SerializeField] AudioClip groupThreeAftermath;
+    [SerializeField] AudioClip stopRaining;
 
     //Clip for ending
     [SerializeField] AudioClip dayTwoEndReact;
