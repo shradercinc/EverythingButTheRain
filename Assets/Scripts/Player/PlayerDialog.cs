@@ -40,6 +40,7 @@ public class PlayerDialog : MonoBehaviour
     //Clips for group three
     [SerializeField] AudioClip groupThreeReact;
     [SerializeField] AudioClip groupThreeAftermath;
+    [SerializeField] AudioClip stopRaining;
 
     //Clip for ending
     [SerializeField] AudioClip dayTwoEndReact;
@@ -161,7 +162,6 @@ public class PlayerDialog : MonoBehaviour
         Debug.Log("Playing Group 2 Aftermath");
         talkSource.clip = groupTwoAftermath;
         talkSource.Play();
-        skyManage.BrightenDay();
         yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
@@ -178,6 +178,7 @@ public class PlayerDialog : MonoBehaviour
         Debug.Log("Playing Group 3 Aftermath");
         talkSource.clip = groupThreeAftermath;
         talkSource.Play();
+        skyManage.BrightenDay();
         yield return new WaitWhile(() => talkSource.isPlaying);
     }
 

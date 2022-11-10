@@ -168,7 +168,7 @@ public class Event_Tutorial : MonoBehaviour
                 }
                 else if(STATE_STATIC == 9)//End of scene (walk through) door
                 {
-
+                    StartCoroutine(EndGame());
                 }
                 else
                 {
@@ -267,6 +267,13 @@ public class Event_Tutorial : MonoBehaviour
         myMesh.enabled = false;
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("TwoEndReactAudio");
         Destroy(gameObject);
+    }
+
+    IEnumerator EndGame()
+    {
+        f2b.Fade(false);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        yield return null;
     }
 
 
