@@ -37,8 +37,13 @@ public class FadeToBlack : MonoBehaviour
     
     IEnumerator FadeIntoBlack(bool nextScene)
     {
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
-        asyncOperation.allowSceneActivation = false;
+        AsyncOperation asyncOperation = null;
+        if (nextScene)
+        {
+            asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
+            asyncOperation.allowSceneActivation = false;
+        }
+
         isComplete = false;
         float t = 0;
         while (t < 1)
