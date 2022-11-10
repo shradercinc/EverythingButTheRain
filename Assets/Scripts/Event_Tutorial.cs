@@ -109,11 +109,6 @@ public class Event_Tutorial : MonoBehaviour
                     _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupTwoAftermathAudio");
                     Destroy(gameObject);
                 }
-                if (STATE_STATIC == 7) //Day 2 Group3
-                {
-                    _player.GetComponent<PlayerDialog>().StartCoroutine("TwoGroupThreeAftermathAudio");
-                    Destroy(gameObject);
-                }
             }
         }
     }

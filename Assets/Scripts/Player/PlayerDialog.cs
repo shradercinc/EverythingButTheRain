@@ -171,6 +171,10 @@ public class PlayerDialog : MonoBehaviour
         talkSource.clip = groupThreeReact;
         talkSource.Play();
         yield return new WaitWhile(() => talkSource.isPlaying);
+        skyManage.BrightenDay();
+        talkSource.clip = stopRaining;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
     IEnumerator TwoGroupThreeAftermathAudio()
@@ -178,7 +182,7 @@ public class PlayerDialog : MonoBehaviour
         Debug.Log("Playing Group 3 Aftermath");
         talkSource.clip = groupThreeAftermath;
         talkSource.Play();
-        skyManage.BrightenDay();
+        //skyManage.BrightenDay();
         yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
