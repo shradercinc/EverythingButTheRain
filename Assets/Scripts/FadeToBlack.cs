@@ -17,9 +17,10 @@ public class FadeToBlack : MonoBehaviour
         StartCoroutine(FadeOutFromBlack());
     }
 
-    public void Fade()
+    // nextScene is bool that sees if you want to transition to the next scene with this fade.
+    public void Fade(bool nextScene = true)
     {
-        StartCoroutine(FadeIntoBlack());
+        StartCoroutine(FadeIntoBlack(nextScene));
     }
     
     IEnumerator FadeOutFromBlack()
@@ -34,7 +35,7 @@ public class FadeToBlack : MonoBehaviour
         _fadeToBlack.color = new Color(0, 0, 0, 0);
     }
     
-    IEnumerator FadeIntoBlack()
+    IEnumerator FadeIntoBlack(bool nextScene)
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
         asyncOperation.allowSceneActivation = false;
@@ -47,9 +48,13 @@ public class FadeToBlack : MonoBehaviour
             yield return null;
         }
 
-        asyncOperation.allowSceneActivation = true;
+        
         isComplete = true;
         _fadeToBlack.color = new Color(0, 0, 0, 1);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        if (nextScene)
+        {
+            asyncOperation.allowSceneActivation = true;
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        }
     }
 }
