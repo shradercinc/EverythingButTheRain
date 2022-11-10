@@ -28,6 +28,21 @@ public class PlayerDialog : MonoBehaviour
     [Header("Day 2 Audio")]
     [SerializeField] AudioClip twoStartDialog;
 
+    //Clips for group one
+    [SerializeField] AudioClip groupOneReact;
+    [SerializeField] AudioClip groupOneAftermath;
+
+    //Clips for group two
+    [SerializeField] AudioClip groupTwoReact;
+    [SerializeField] AudioClip groupTwoAftermath;
+
+    //Clips for group three
+    [SerializeField] AudioClip groupThreeReact;
+    [SerializeField] AudioClip groupThreeAftermath;
+
+    //Clip for ending
+    [SerializeField] AudioClip dayTwoEndReact;
+
 
     private void Awake()
     {
@@ -52,10 +67,7 @@ public class PlayerDialog : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-
-    }
+    //DAY 1 COROUTINES!!!
 
     IEnumerator StartGameAudio()
     {
@@ -107,6 +119,16 @@ public class PlayerDialog : MonoBehaviour
         talkSource.clip = finalAftermath;
         talkSource.Play();
         yield return new WaitWhile(() => talkSource.isPlaying); 
+    }
+
+    //DAY 2 COROUTINES!!!
+
+    IEnumerator StartTwoAudio()
+    {
+        Debug.Log("Playing Start 2");
+        talkSource.clip = twoStartDialog;
+        talkSource.Play();
+        yield return new WaitWhile(() => talkSource.isPlaying);
     }
 
 }

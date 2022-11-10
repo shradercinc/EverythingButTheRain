@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Event_Tutorial : MonoBehaviour
 {
+
+    Scene currentScene;
 
     MeshRenderer myMesh;
     public GameObject _player;
@@ -23,6 +26,7 @@ public class Event_Tutorial : MonoBehaviour
     // 1 = Tutorial
     // 2 = Maeve
     // 3 = Final
+    // 4 = End (Doors to NYU)
     public int STATE_STATIC = -1;
 
     public EventStatus STATUS;
@@ -35,6 +39,7 @@ public class Event_Tutorial : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        currentScene = gameObject.scene; //This is how we check if we are in day 1 or 2
         myMesh = GetComponent<MeshRenderer>();
         _player = GameObject.FindGameObjectWithTag("Player");
         umbRigid = _player.transform.Find("Umbrella_Temp").GetComponent<Rigidbody>();
@@ -51,8 +56,15 @@ public class Event_Tutorial : MonoBehaviour
 
         if(STATUS == EventStatus.START)
         {
-            StartCoroutine(StartSetup());
-            STATUS = EventStatus.VOID;
+            if (currentScene.name == "Day2") //If we are in Day 2
+            {
+                StartCoroutine(StartDayTwoSetup());
+            }
+            else
+            {
+                StartCoroutine(StartSetup());
+                STATUS = EventStatus.VOID;
+            }
         }
         if (inTrig)
         {
@@ -74,7 +86,8 @@ public class Event_Tutorial : MonoBehaviour
                 }
                 if(STATE_STATIC == 3)
                 {
-                    //_player.GetComponent<PlayerDialog>().StartCoroutine();
+                    _player.GetComponent<PlayerDialog>().StartCoroutine("FinalAftermathAudio");
+                    Destroy(gameObject);
                 }
            }
         }
@@ -102,6 +115,11 @@ public class Event_Tutorial : MonoBehaviour
                 {
                     StartCoroutine("FinalSetup");
                     STATUS = EventStatus.FINAL;
+                }
+                else if(STATE_STATIC == 4) //First group in Day 2
+                {
+                    StartCoroutine(DayTwoGroupOneSetup());
+                    STATUS = EventStatus.DAYTWO_EVENT;
                 }
                 else
                 {
@@ -155,6 +173,22 @@ public class Event_Tutorial : MonoBehaviour
         yield return _player.GetComponent<PlayerDialog>().StartCoroutine("FinalIntroAudio");
     }
 
+    IEnumerator EndSetup()
+    {
+        //We need to fill this with code to switch scenes (Day2 and weather transition)
+        yield return null;
+    }
+
+    IEnumerator StartDayTwoSetup()
+    {
+        yield return _player.GetComponent<PlayerDialog>().StartCoroutine("StartTwoAudio");
+    }
+
+    IEnumerator DayTwoGroupOneSetup()
+    {
+        yield return null;
+    }
+
 }
 
 public enum EventStatus
@@ -164,5 +198,6 @@ public enum EventStatus
     MAEVE,
     FINAL,
     END,
+    DAYTWO_EVENT, //This is how we track if we are in a event or not
     VOID //This is a empty event for right now. Nothing should happen when event is set to this
 }
