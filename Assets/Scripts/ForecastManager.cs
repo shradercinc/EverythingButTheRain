@@ -27,6 +27,7 @@ public class ForecastManager : MonoBehaviour
     [SerializeField] private GameObject bg;
     [SerializeField] private Color rainyColor;
     [SerializeField] private Color sunnyColor;
+    [SerializeField] private Image fadeToBlack;
 
     [Header("Animation Fields")]
     [SerializeField] private float transitionTime;
@@ -126,6 +127,16 @@ public class ForecastManager : MonoBehaviour
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         }
+    }
+
+    IEnumerator FadeOutFromBlack()
+    {
+        yield return null;
+    }
+    
+    IEnumerator FadeIntoBlack()
+    {
+        yield return null;
     }
 
     private void Start()
