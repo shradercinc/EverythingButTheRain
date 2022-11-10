@@ -10544,7 +10544,7 @@ PrefabInstance:
         type: 3}
       propertyPath: groupTwoReact
       value: 
-      objectReference: {fileID: 8300000, guid: 4901646f4314a5749b08d2a7ded4320e, type: 3}
+      objectReference: {fileID: 8300000, guid: 5e90f3bb22927834485b6abbcb8515df, type: 3}
     - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: dayTwoEndReact
@@ -10554,7 +10554,7 @@ PrefabInstance:
         type: 3}
       propertyPath: twoStartDialog
       value: 
-      objectReference: {fileID: 8300000, guid: aa3fd9290f8b499479bde8926d76d52c, type: 3}
+      objectReference: {fileID: 8300000, guid: 4901646f4314a5749b08d2a7ded4320e, type: 3}
     - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: groupThreeReact
