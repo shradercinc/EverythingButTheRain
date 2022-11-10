@@ -7546,6 +7546,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2751211547887015284, guid: 399f38fce7e7293468de8cafc2ba0374,
         type: 3}
+      propertyPath: f2b
+      value: 
+      objectReference: {fileID: 1987941835}
+    - target: {fileID: 2751211547887015284, guid: 399f38fce7e7293468de8cafc2ba0374,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 456950777}
+    - target: {fileID: 2751211547887015284, guid: 399f38fce7e7293468de8cafc2ba0374,
+        type: 3}
       propertyPath: STATE_STATIC
       value: 9
       objectReference: {fileID: 0}
@@ -13418,6 +13428,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 911273485}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1987941835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8308641030331391007, guid: db5ca6a14dbc0a84d832b01a568e6f14,
+    type: 3}
+  m_PrefabInstance: {fileID: 911273485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00901a5ca883b624ea771114fd87eead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1990198535
 PrefabInstance:
   m_ObjectHideFlags: 0

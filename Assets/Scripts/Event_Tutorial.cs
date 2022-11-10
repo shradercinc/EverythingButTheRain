@@ -168,7 +168,7 @@ public class Event_Tutorial : MonoBehaviour
                 }
                 else if(STATE_STATIC == 9)//End of scene (walk through) door
                 {
-
+                    StartCoroutine(EndGame());
                 }
                 else
                 {
@@ -236,7 +236,7 @@ public class Event_Tutorial : MonoBehaviour
     IEnumerator DayTwoGroupOneSetup()
     {
         f2b.Fade();
-        yield return new WaitForSeconds(0.1f);
+        yield return null;
     }
 
     //I want to put this into DayTwoGroupOneSetup(), but I'm worried about messing up Ryan's fade code
@@ -269,10 +269,12 @@ public class Event_Tutorial : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //IEnumerator EndGame()
-    //{
-         
-    //}
+    IEnumerator EndGame()
+    {
+        f2b.Fade(false);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        yield return null;
+    }
 
 
 }
