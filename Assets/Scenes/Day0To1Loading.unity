@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.1853, g: 324.85815, b: 429.9668, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5535,6 +5535,7 @@ MonoBehaviour:
   bg: {fileID: 1077048018}
   rainyColor: {r: 0.24705882, g: 0.29411766, b: 0.41568628, a: 0.39215687}
   sunnyColor: {r: 0.40908435, g: 0.5081245, b: 0.5754717, a: 0.39215687}
+  fadeToBlack: {fileID: 1457008602}
   transitionTime: 8
   slideLength: -6160
   firstDayIndex: 0

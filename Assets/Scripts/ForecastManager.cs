@@ -41,10 +41,12 @@ public class ForecastManager : MonoBehaviour
 
     IEnumerator ForecastLoadingScreen()
     {
+        StopCoroutine(FadeOutFromBlack());
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(loadScene);
         asyncOperation.allowSceneActivation = false;
         int currPosX = 0;
         float rainShine = 0;
+        bool fading = false;
 
         var timeTxt = info.transform.Find("Time").GetComponent<TMP_Text>();
         var conditionTxt = info.transform.Find("Condition").GetComponent<TMP_Text>();
@@ -118,6 +120,12 @@ public class ForecastManager : MonoBehaviour
             }
             
             yield return null;
+
+            if (t > 1 - 1/transitionTime && !fading)
+            {
+                fading = true;
+                StartCoroutine(FadeIntoBlack());
+            }
         }
 
         asyncOperation.allowSceneActivation = true;
@@ -131,17 +139,32 @@ public class ForecastManager : MonoBehaviour
 
     IEnumerator FadeOutFromBlack()
     {
-        yield return null;
+        float t = 1;
+        while (t > 0)
+        {
+            t -= Time.deltaTime;
+            fadeToBlack.color = new Color(0, 0, 0, t);
+            yield return null;
+        }
+        fadeToBlack.color = new Color(0, 0, 0, 0);
+        StartCoroutine(ForecastLoadingScreen());
     }
     
     IEnumerator FadeIntoBlack()
     {
-        yield return null;
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            fadeToBlack.color = new Color(0, 0, 0, t);
+            yield return null;
+        }
+        fadeToBlack.color = new Color(0, 0, 0, 1);
     }
 
     private void Start()
     {
-        StartCoroutine(ForecastLoadingScreen());
+        StartCoroutine(FadeOutFromBlack());
     }
 
     [ContextMenu("GenerateDays")]
