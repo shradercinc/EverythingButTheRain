@@ -7233,7 +7233,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145182881577292954, guid: ce96a8d2b21960140a3d461e127e7d41,
         type: 3}
-<<<<<<< Updated upstream
       propertyPath: finalReact
       value: 
       objectReference: {fileID: 8300000, guid: cd09791bf4af0584bb8d7b9373fd4f3b, type: 3}
@@ -7247,11 +7246,6 @@ PrefabInstance:
       propertyPath: finalAftermath
       value: 
       objectReference: {fileID: 8300000, guid: c4f8ff284808315489230beed79fc858, type: 3}
-=======
-      propertyPath: startDialog
-      value: 
-      objectReference: {fileID: 8300000, guid: c92ab664c22879c44a51f5c65f0547c3, type: 3}
->>>>>>> Stashed changes
     - target: {fileID: 7517682624676342971, guid: ce96a8d2b21960140a3d461e127e7d41,
         type: 3}
       propertyPath: m_RootOrder
