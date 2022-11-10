@@ -23,6 +23,7 @@ public class Event_Tutorial : MonoBehaviour
     // 1 = Tutorial
     // 2 = Maeve
     // 3 = Final
+    // 4 = End (Doors to NYU)
     public int STATE_STATIC = -1;
 
     public EventStatus STATUS;
@@ -74,7 +75,8 @@ public class Event_Tutorial : MonoBehaviour
                 }
                 if(STATE_STATIC == 3)
                 {
-                    //_player.GetComponent<PlayerDialog>().StartCoroutine();
+                    _player.GetComponent<PlayerDialog>().StartCoroutine("FinalAftermathAudio");
+                    Destroy(gameObject);
                 }
            }
         }
@@ -102,6 +104,10 @@ public class Event_Tutorial : MonoBehaviour
                 {
                     StartCoroutine("FinalSetup");
                     STATUS = EventStatus.FINAL;
+                }
+                else if(STATE_STATIC == 4)
+                {
+
                 }
                 else
                 {

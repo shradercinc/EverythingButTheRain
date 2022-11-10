@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
         // Changes particle behavior based on the umbrella's spin speed.
         var proportion = Mathf.Clamp(1 - counter, 0, 1);
-        Debug.Log(proportion);
+        //Debug.Log(proportion);
         var vOL = umbrellaParticles.velocityOverLifetime;
         vOL.radial = new ParticleSystem.MinMaxCurve(0, proportion * maxRParticleSpd);
         vOL.y = new ParticleSystem.MinMaxCurve(proportion * maxYParticleSpd);

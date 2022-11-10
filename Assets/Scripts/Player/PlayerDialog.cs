@@ -52,10 +52,6 @@ public class PlayerDialog : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-
-    }
 
     IEnumerator StartGameAudio()
     {
