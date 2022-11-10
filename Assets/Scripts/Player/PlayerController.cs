@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
             if (!_spinBurst)
             {
                 _spinBurst = true;
-                umbrellaParticlesEmission.SetBurst(0, new ParticleSystem.Burst(0f, 30));
+                umbrellaParticlesEmission.SetBurst(0, new ParticleSystem.Burst(0f, 3));
             }
         }
 
