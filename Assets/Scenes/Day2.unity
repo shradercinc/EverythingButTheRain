@@ -1822,6 +1822,11 @@ PrefabInstance:
       propertyPath: clips.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6372206586257298003, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6372206586257298014, guid: 354226ffdefd1a340b47fb69cd2e1813,
         type: 3}
       propertyPath: m_Name
@@ -10423,7 +10428,7 @@ PrefabInstance:
     - target: {fileID: 4895909425250471954, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: walkSpeed
-      value: 11.12
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4895909425250472168, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
