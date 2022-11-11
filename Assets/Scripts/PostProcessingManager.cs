@@ -11,13 +11,17 @@ public class PostProcessingManager : MonoBehaviour
     [SerializeField] private ParticleSystem rain;
     [SerializeField] private ParticleSystem fog;
     [SerializeField] private ParticleSystem umbrella;
-
+    [SerializeField] private MeshRenderer umbrellaCanvas;
+ 
     [SerializeField] private float transitionTime;
+
+    [SerializeField] private float _transparency;
     
     // Start is called before the first frame update
     void Start()
     {
         _transitionVolume = GetComponent<Volume>();
+        _transparency = umbrellaCanvas.material.GetFloat("_Transparency");
         ResetDay();
     }
 
@@ -52,10 +56,18 @@ public class PostProcessingManager : MonoBehaviour
         while(_transitionVolume.weight < 1)
         {
             _transitionVolume.weight += Time.deltaTime / transitionTime;
-            if(_transitionVolume.weight > 0.5f) fog.Stop();
+            umbrellaCanvas.material.SetFloat("_Transparency", (1 - _transitionVolume.weight) * _transparency);
+            if (_transitionVolume.weight > 0.5f)
+            {
+                fog.Stop();
+            }
+            if (_transitionVolume.weight > 0.7f)
+            {
+                umbrella.Stop();
+            }
             yield return null;
         }
-        umbrella.Stop();
+        umbrellaCanvas.material.SetFloat("_Transparency", 0);
         _transitionVolume.weight = 1;
     }
 }

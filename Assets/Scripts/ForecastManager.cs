@@ -62,7 +62,7 @@ public class ForecastManager : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime / transitionTime;
-            float v = EaseInOutElastic(0, 1, t);
+            float v = EaseInOutQuad(0, 1, t);
             var pos = new Vector3(v * slideLength, -100);
             forecastHolder.transform.localPosition = pos;
             
@@ -246,31 +246,13 @@ public class ForecastManager : MonoBehaviour
      * https://gist.github.com/cjddmut/d789b9eb78216998e95c
      * @author by cjddmut
      */
-    public static float EaseInOutElastic(float start, float end, float value)
+    public static float EaseInOutQuad(float start, float end, float value)
     {
+        value /= .5f;
         end -= start;
-
-        float d = 1f;
-        float p = d * .3f;
-        float s;
-        float a = 0;
-
-        if (value == 0) return start;
-
-        if ((value /= d * 0.5f) == 2) return start + end;
-
-        if (a == 0f || a < Mathf.Abs(end))
-        {
-            a = end;
-            s = p / 4;
-        }
-        else
-        {
-            s = p / (2 * Mathf.PI) * Mathf.Asin(end / a);
-        }
-
-        if (value < 1) return -0.5f * (a * Mathf.Pow(2, 10 * (value -= 1)) * Mathf.Sin((value * d - s) * (2 * Mathf.PI) / p)) + start;
-        return a * Mathf.Pow(2, -10 * (value -= 1)) * Mathf.Sin((value * d - s) * (2 * Mathf.PI) / p) * 0.5f + end + start;
+        if (value < 1) return end * 0.5f * value * value + start;
+        value--;
+        return -end * 0.5f * (value * (value - 2) - 1) + start;
     }
 
     private enum DaysOfWeek

@@ -10377,6 +10377,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2320417815679656056, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320417815679656056, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 120
       objectReference: {fileID: 0}
@@ -10515,6 +10520,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7585351507836570083, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: m_Radius
+      value: 93.54
+      objectReference: {fileID: 0}
     - target: {fileID: 7585845157400525000, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: m_Volume
@@ -10573,6 +10583,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 562523076, guid: 36e23e4249ca63444ae296e065ffd449, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36e23e4249ca63444ae296e065ffd449, type: 3}
+--- !u!23 &1592366500 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 672097507549341983, guid: 36e23e4249ca63444ae296e065ffd449,
+    type: 3}
+  m_PrefabInstance: {fileID: 1592366499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1603957652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13874,7 +13890,9 @@ MonoBehaviour:
   rain: {fileID: 993456079}
   fog: {fileID: 1724434812}
   umbrella: {fileID: 1017451300}
-  transitionTime: 20
+  umbrellaCanvas: {fileID: 1592366500}
+  transitionTime: 10
+  _transparency: 0
 --- !u!65 &2052975996
 BoxCollider:
   m_ObjectHideFlags: 0
