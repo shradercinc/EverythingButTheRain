@@ -167,6 +167,7 @@ public class ForecastManager : MonoBehaviour
         StartCoroutine(FadeOutFromBlack());
     }
 
+/*
     [ContextMenu("GenerateDays")]
     public void GenerateDays()
     {
@@ -241,6 +242,7 @@ public class ForecastManager : MonoBehaviour
             forecast.transform.localPosition = new Vector3(offsetIncrement * ForecastIncrements, 0, 0);
         }
     }
+*/
     
     /**
      * https://gist.github.com/cjddmut/d789b9eb78216998e95c
