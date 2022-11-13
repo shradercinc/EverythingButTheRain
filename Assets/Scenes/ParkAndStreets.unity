@@ -6487,6 +6487,16 @@ PrefabInstance:
       propertyPath: groupThreeAftermath
       value: 
       objectReference: {fileID: 8300000, guid: c1c56fc3106660f4284cfeb7a7f9b791, type: 3}
+    - target: {fileID: 4819901429513094303, guid: ce96a8d2b21960140a3d461e127e7d41,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517682624676342853, guid: ce96a8d2b21960140a3d461e127e7d41,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7517682624676342971, guid: ce96a8d2b21960140a3d461e127e7d41,
         type: 3}
       propertyPath: m_RootOrder
@@ -6550,7 +6560,7 @@ PrefabInstance:
     - target: {fileID: 7830327902470436464, guid: ce96a8d2b21960140a3d461e127e7d41,
         type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8140913307661204899, guid: ce96a8d2b21960140a3d461e127e7d41,
         type: 3}

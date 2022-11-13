@@ -10388,6 +10388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2413160230082331177, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
+      propertyPath: cDif
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413160230082331177, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
       propertyPath: Talker
       value: 
       objectReference: {fileID: 456950777}
@@ -10516,6 +10521,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 39900756}
+    - target: {fileID: 5120318547035900455, guid: 36e23e4249ca63444ae296e065ffd449,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6179593014973920902, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: m_Volume
@@ -10529,7 +10539,7 @@ PrefabInstance:
     - target: {fileID: 7585845157400525000, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7645079102128520348, guid: 36e23e4249ca63444ae296e065ffd449,
         type: 3}
