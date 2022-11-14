@@ -1758,6 +1758,81 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.3041229
       objectReference: {fileID: 0}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcec89f486aa6c34790a266112dc62cb, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: e05f604274da0d24bbc67801056e0fd5, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cf535c88761e6f48a05fca554a8816e, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: fbdbd1d5d7494944bbbd1df9becf7e25, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: e96dda9734f09ab42a7c7da599b243ca, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 891e4d22205f3124e9b766fe3383681c, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4425210dfe8d99d4d9a9b0a3ea0b9108, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: ba4e35681c8388244a1e6a54cc032753, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 190307f4c8a497244b7d100115c57b64, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 90175ed0f599c8e41ae161bba1df3d65, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71119176fac248e4fa906c2f76f00681, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 32b9aaf5fe2a1ee4cb8e8dd88633d324, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 67833fed72de8004680656b65125fde1, type: 3}
+    - target: {fileID: 6372206586257298000, guid: 354226ffdefd1a340b47fb69cd2e1813,
+        type: 3}
+      propertyPath: Clip.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: a024fdf148c56ca4ebc587b664a7fcb9, type: 3}
     - target: {fileID: 6372206586257298001, guid: 354226ffdefd1a340b47fb69cd2e1813,
         type: 3}
       propertyPath: m_RootOrder
